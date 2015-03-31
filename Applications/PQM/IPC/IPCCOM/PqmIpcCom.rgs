@@ -1,0 +1,26 @@
+HKCR
+{
+	IPCCom.PqmIpcCom.1 = s 'PqmIpcCom Class'
+	{
+		CLSID = s '{577F5E9A-B956-4448-9FE4-213318814DAF}'
+	}
+	IPCCom.PqmIpcCom = s 'PqmIpcCom Class'
+	{
+		CLSID = s '{577F5E9A-B956-4448-9FE4-213318814DAF}'
+		CurVer = s 'IPCCom.PqmIpcCom.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {577F5E9A-B956-4448-9FE4-213318814DAF} = s 'PqmIpcCom Class'
+		{
+			ProgID = s 'IPCCom.PqmIpcCom.1'
+			VersionIndependentProgID = s 'IPCCom.PqmIpcCom'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{FF01EF82-9016-4B64-AF2A-BEF80094AD62}'
+		}
+	}
+}

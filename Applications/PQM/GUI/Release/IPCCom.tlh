@@ -1,0 +1,603 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.9782.0 (8b320a64).
+//
+// c:\mrmplus\sources\acquire\pqm_an\gui\release\IPCCom.tlh
+//
+// C++ source equivalent of Win32 type library PQM\IPCCom.tlb
+// compiler-generated file created 01/30/14 at 15:27:00 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace IPCCOMLib {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("bf9a6083-0ee0-4a18-83f0-f6aea7f9d131"))
+/* interface */ _IPqmIpcComEvents;
+struct /* coclass */ PqmIpcCom;
+struct __declspec(uuid("d29723f3-c8cc-453c-aa93-8030021b73d0"))
+/* dual interface */ IPqmIpcCom;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(_IPqmIpcComEvents, __uuidof(_IPqmIpcComEvents));
+_COM_SMARTPTR_TYPEDEF(IPqmIpcCom, __uuidof(IPqmIpcCom));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("bf9a6083-0ee0-4a18-83f0-f6aea7f9d131"))
+_IPqmIpcComEvents : IUnknown
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall SendMsgToUI (
+        int Msg ) = 0;
+    virtual HRESULT __stdcall DisplayDebugData (
+        BSTR f_displaydata ) = 0;
+};
+
+struct __declspec(uuid("577f5e9a-b956-4448-9fe4-213318814daf"))
+PqmIpcCom;
+    // [ default ] interface IPqmIpcCom
+    // [ default, source ] interface _IPqmIpcComEvents
+
+struct __declspec(uuid("d29723f3-c8cc-453c-aa93-8030021b73d0"))
+IPqmIpcCom : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall Initialize (
+        int f_mode,
+        VARIANT * f_config_data ) = 0;
+    virtual HRESULT __stdcall StartScan (
+        VARIANT * f_pVariant,
+        int f_position ) = 0;
+    virtual HRESULT __stdcall AbortScan ( ) = 0;
+    virtual HRESULT __stdcall PauseScan ( ) = 0;
+    virtual HRESULT __stdcall ResumeScan ( ) = 0;
+    virtual HRESULT __stdcall MrsScanClose ( ) = 0;
+    virtual HRESULT __stdcall ReceiveLOID (
+        BSTR f_strpatientloid,
+        BSTR f_strstudyloid,
+        BSTR f_pas_path ) = 0;
+    virtual HRESULT __stdcall ReceiveSeriesAll (
+        BSTR bStr ) = 0;
+    virtual HRESULT __stdcall ReceiveSeriesOrder (
+        BSTR bStr,
+        int dropindex ) = 0;
+    virtual HRESULT __stdcall ConnectVoiceManager (
+        int id ) = 0;
+    virtual HRESULT __stdcall SetAutoVoice (
+        long flag ) = 0;
+    virtual HRESULT __stdcall UpdateComment (
+        BSTR bStr,
+        BSTR scancomment,
+        BSTR scanid ) = 0;
+    virtual HRESULT __stdcall OnPQMCloseButton ( ) = 0;
+    virtual HRESULT __stdcall GetColorDataEx (
+        VARIANT * data ) = 0;
+    virtual HRESULT __stdcall GetSeqData (
+        VARIANT * pdata,
+        int mode ) = 0;
+    virtual HRESULT __stdcall DuplicateSequence (
+        VARIANT * pdata,
+        BSTR bStr,
+        int f_index_duplicating_prot ) = 0;
+    virtual HRESULT __stdcall GetSeqParamNameList (
+        VARIANT * pdata ) = 0;
+    virtual HRESULT __stdcall DeleteSequence (
+        BSTR bStr ) = 0;
+    virtual HRESULT __stdcall GetMaxProtocolLimit (
+        long * MaxProtLimit ) = 0;
+    virtual HRESULT __stdcall WriteTraceLog (
+        LPWSTR domain_name,
+        unsigned long marker_val,
+        LPWSTR func_name,
+        LPWSTR log_text,
+        int detail_trace_log ) = 0;
+    virtual HRESULT __stdcall WriteOpeLog (
+        unsigned short opeation_id ) = 0;
+    virtual HRESULT __stdcall WriteEventLog (
+        BSTR err_msg,
+        int error_level,
+        BSTR code_line,
+        int error_line,
+        int detail_error_log ) = 0;
+    virtual HRESULT __stdcall PQMDisplayError (
+        BSTR error_msg,
+        BSTR file_name,
+        unsigned int line_Number,
+        int error_level,
+        unsigned long msg_id,
+        BSTR event_source,
+        int f_detail_error_log ) = 0;
+    virtual HRESULT __stdcall UpdateGUIControlsInDB (
+        VARIANT * pdata,
+        BSTR f_seriesid ) = 0;
+    virtual HRESULT __stdcall StartRFLPrescan (
+        int scanindex ) = 0;
+    virtual HRESULT __stdcall StartCFAPrescan (
+        int scanindex ) = 0;
+    virtual HRESULT __stdcall SendGateModeInfo (
+        int f_gate_mode ) = 0;
+    virtual HRESULT __stdcall PutInjectTimeInDB ( ) = 0;
+    virtual HRESULT __stdcall GetAPCHoldValue (
+        long * holdvalue ) = 0;
+    virtual HRESULT __stdcall ChangeShimCenterFrequency (
+        double fsyvalue ) = 0;
+    virtual HRESULT __stdcall SetAPCHoldValue (
+        long holdvalue ) = 0;
+    virtual HRESULT __stdcall SetReceiverCoilID (
+        long f_receiver_coilid ) = 0;
+    virtual HRESULT __stdcall SetAnatomy (
+        int f_anatomy_id ) = 0;
+    virtual HRESULT __stdcall GetSeriesCount (
+        int * seriescnt ) = 0;
+    virtual HRESULT __stdcall PQMDisplayScanError (
+        int f_errorid,
+        BSTR f_errorstr,
+        int f_errorlevel,
+        BSTR f_errorsource ) = 0;
+    virtual HRESULT __stdcall SendSequencesToMemory (
+        VARIANT * pdata ) = 0;
+    virtual HRESULT __stdcall SetPQMMode (
+        int mode ) = 0;
+    virtual HRESULT __stdcall SetExeAutoVoice (
+        int __MIDL_0011 ) = 0;
+    virtual HRESULT __stdcall UpdateGUIControlsInVarfieldDB (
+        VARIANT * pdata,
+        int f_scan_index ) = 0;
+    virtual HRESULT __stdcall DeleteProtocolFromVarField (
+        int f_index ) = 0;
+    virtual HRESULT __stdcall DuplicateProtocol (
+        int f_from_pos,
+        int f_to_pos,
+        int f_group_id ) = 0;
+    virtual HRESULT __stdcall DuplicateSequenceInVarfield (
+        int f_pos_list ) = 0;
+    virtual HRESULT __stdcall ReArrange (
+        int f_drag_index,
+        int f_drop_index ) = 0;
+    virtual HRESULT __stdcall SetShimmWBCoil (
+        long f_shim_wb_coil ) = 0;
+    virtual HRESULT __stdcall GetSeqDataofDisplaySequences (
+        VARIANT * pdata,
+        int f_mode,
+        int f_firstseq ) = 0;
+    virtual HRESULT __stdcall SetShimFSYFlag (
+        int f_shimfsy_flag ) = 0;
+    virtual HRESULT __stdcall SetPrescanHook (
+        long f_prescan_hook ) = 0;
+    virtual HRESULT __stdcall PQMManualPrescanClose ( ) = 0;
+    virtual HRESULT __stdcall PQMManualPrescanApply (
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall GetManualPreScanDefaultData (
+        VARIANT * * f_pdata ) = 0;
+    virtual HRESULT __stdcall GetMRSDefaultValue (
+        VARIANT * * __MIDL_0012 ) = 0;
+    virtual HRESULT __stdcall MrsScanStartUiCB (
+        VARIANT * __MIDL_0013 ) = 0;
+    virtual HRESULT __stdcall ProconReqUiCB (
+        int __MIDL_0014,
+        int __MIDL_0015,
+        int __MIDL_0016 ) = 0;
+    virtual HRESULT __stdcall PqmSeverConfigToProCon (
+        int __MIDL_0017,
+        int __MIDL_0018,
+        int * __MIDL_0019,
+        int __MIDL_0020 ) = 0;
+    virtual HRESULT __stdcall SetAutoPlan (
+        int __MIDL_0021 ) = 0;
+    virtual HRESULT __stdcall SetPlanAndScan (
+        int __MIDL_0022 ) = 0;
+    virtual HRESULT __stdcall SetAutoView (
+        int __MIDL_0023 ) = 0;
+    virtual HRESULT __stdcall SetSkipRgn (
+        int __MIDL_0024 ) = 0;
+    virtual HRESULT __stdcall SetAllCoverageRgn (
+        int __MIDL_0025 ) = 0;
+    virtual HRESULT __stdcall SetPrepWbCoil (
+        int __MIDL_0026 ) = 0;
+    virtual HRESULT __stdcall SendElectrodeType (
+        int __MIDL_0027 ) = 0;
+    virtual HRESULT __stdcall SetActiveDialog (
+        int __MIDL_0028,
+        long __MIDL_0029 ) = 0;
+    virtual HRESULT __stdcall SetScanOffsetValue (
+        int index,
+        float f_scanoffset_x,
+        float f_scanoffset_y,
+        float f_scanoffset_z,
+        long f_set_mdoe ) = 0;
+    virtual HRESULT __stdcall GetScanAnatomy (
+        VARIANT * * pdata ) = 0;
+    virtual HRESULT __stdcall GetCoilSelectionData (
+        VARIANT * f_pdata,
+        int f_mode ) = 0;
+    virtual HRESULT __stdcall SendMessageToAcqManForCoil (
+        int f_mode,
+        int f_acq_order ) = 0;
+    virtual HRESULT __stdcall GetConnectCoilInfo (
+        VARIANT * f_data ) = 0;
+    virtual HRESULT __stdcall SendCoilSelReadyToIPC (
+        int f_index ) = 0;
+    virtual HRESULT __stdcall GetShowCoilList (
+        VARIANT * f_data ) = 0;
+    virtual HRESULT __stdcall GetSelectCoilList (
+        VARIANT * f_data ) = 0;
+    virtual HRESULT __stdcall SendSelectedCoilListToIPC (
+        VARIANT * pdata,
+        int f_protocol ) = 0;
+    virtual HRESULT __stdcall SendConnectedCoilListToIPC (
+        VARIANT * pdata,
+        int f_protocol ) = 0;
+    virtual HRESULT __stdcall GetCoilNameFromAcqOrder (
+        int f_acq_order,
+        VARIANT * * coilnamefrom ) = 0;
+    virtual HRESULT __stdcall GetInsideLimit (
+        int f_index,
+        int * f_in_side_limit,
+        int * f_out_side_limit,
+        long * f_enable ) = 0;
+    virtual HRESULT __stdcall OnPQMExit ( ) = 0;
+    virtual HRESULT __stdcall SetDBDtCancelFlag (
+        long f_dbdt_flag ) = 0;
+    virtual HRESULT __stdcall SetMoveLocatorMode (
+        long f_flag ) = 0;
+    virtual HRESULT __stdcall SetBatchForSARNCoil (
+        long f_flag ) = 0;
+    virtual HRESULT __stdcall GetConnectedCoilListForDisplayFromIPC (
+        VARIANT * f_data ) = 0;
+    virtual HRESULT __stdcall GetConnectedCoilInformationForGUIDisplay (
+        long f_flag ) = 0;
+    virtual HRESULT __stdcall GetControlValueFromDB (
+        VARIANT * f_pdata,
+        int f_scan_index ) = 0;
+    virtual HRESULT __stdcall GetCurrentWSEEditProt (
+        VARIANT * f_data ) = 0;
+    virtual HRESULT __stdcall GetGateInfoList (
+        VARIANT * pdata ) = 0;
+    virtual HRESULT __stdcall SendAcqInfoForGate ( ) = 0;
+    virtual HRESULT __stdcall ConnectToAcqMan ( ) = 0;
+    virtual HRESULT __stdcall CheckNextProtocol (
+        int l_protocol_no,
+        long f_flag ) = 0;
+    virtual HRESULT __stdcall GetSequenceInformation (
+        VARIANT * f_data,
+        int f_acq_order ) = 0;
+    virtual HRESULT __stdcall ConnectToProconFromGUI ( ) = 0;
+    virtual HRESULT __stdcall GetNewSeriesLoids (
+        VARIANT * f_newseriesloid ) = 0;
+    virtual HRESULT __stdcall GetCurrentSarInfoToDisplay (
+        VARIANT * * pdata ) = 0;
+    virtual HRESULT __stdcall GetIPCTopMostWaitAcqOrder (
+        int * f_acqorder ) = 0;
+    virtual HRESULT __stdcall FileCopy (
+        BSTR f_existingfilename,
+        BSTR f_newfilename ) = 0;
+    virtual HRESULT __stdcall GetStudyPath (
+        VARIANT * pdata ) = 0;
+    virtual HRESULT __stdcall GetHasParent (
+        int f_acq_order ) = 0;
+    virtual HRESULT __stdcall OnPQMDeleteProtocol (
+        int f_protocol_index ) = 0;
+    virtual HRESULT __stdcall OnPQMDuplicateProtocol (
+        int f_index_to_duplicate,
+        int f_duplicat ) = 0;
+    virtual HRESULT __stdcall RecvCallBack (
+        VARIANT * messageParam,
+        VARIANT * messageRet,
+        VARIANT * pCustom ) = 0;
+    virtual HRESULT __stdcall GetSarInfoPtr (
+        VARIANT * pdata ) = 0;
+    virtual HRESULT __stdcall SetProtocolIndex (
+        int f_index ) = 0;
+    virtual HRESULT __stdcall GetCouchPos (
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall GetTotalSequeunces (
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall GetGUIListProtocolInfo (
+        VARIANT * pdata,
+        int f_count_gui_list ) = 0;
+    virtual HRESULT __stdcall GetDBDTCurrentMode (
+        int f_index,
+        int * f_mode ) = 0;
+    virtual HRESULT __stdcall GetCoilNameFromTransmiter (
+        int f_acq_order,
+        VARIANT * * coilnamefrom ) = 0;
+    virtual HRESULT __stdcall GetCoilNameFromReceiver (
+        int f_acq_order,
+        VARIANT * * coilnamefrom ) = 0;
+    virtual HRESULT __stdcall InitializeTicks ( ) = 0;
+    virtual HRESULT __stdcall GetCoilSysSetting (
+        VARIANT * f_data ) = 0;
+    virtual HRESULT __stdcall GetPqmPqIsGlocOk ( ) = 0;
+    virtual HRESULT __stdcall GetEnableDisableAutoTransfer ( ) = 0;
+    virtual HRESULT __stdcall UpdateProtocolDataInSeries (
+        VARIANT * pdata,
+        BSTR f_seriesid,
+        int f_prot_index ) = 0;
+    virtual HRESULT __stdcall GetPatientScanoffset (
+        int f_acq_order,
+        VARIANT * * f_scanoffset ) = 0;
+    virtual HRESULT __stdcall RemoteCheckActiveFlag ( ) = 0;
+    virtual HRESULT __stdcall InitPlanDuplicateSettings ( ) = 0;
+    virtual HRESULT __stdcall ReadPlanDuplicateSettings (
+        VARIANT * * f_data ) = 0;
+    virtual HRESULT __stdcall WritePlanDuplicateMask (
+        long f_imask,
+        long f_bsaveflag ) = 0;
+    virtual HRESULT __stdcall StartPQMDebug (
+        int f_debugOption,
+        unsigned int f_buttonmask ) = 0;
+    virtual HRESULT __stdcall PqmDebugStatusLogOpen ( ) = 0;
+    virtual HRESULT __stdcall SelectListandTotalCnt (
+        int * __MIDL_0030,
+        int __MIDL_0031 ) = 0;
+    virtual HRESULT __stdcall SetPqmPmDelay (
+        int f_delay1,
+        int f_delay2 ) = 0;
+    virtual HRESULT __stdcall SetChildThreadStatusToIPC (
+        int * f_pdata,
+        int f_count,
+        int f_child_thread_status ) = 0;
+    virtual HRESULT __stdcall SetFirstWaitProtForAutoScan (
+        int f_acqorder ) = 0;
+    virtual HRESULT __stdcall GetMagneticCenterPos (
+        VARIANT * * f_data ) = 0;
+    virtual HRESULT __stdcall GetCDSDebugParam (
+        VARIANT * * f_compass_debug_param ) = 0;
+    virtual HRESULT __stdcall SetASCOMPASSParameter (
+        VARIANT * * f_cdscompasssetting_param ) = 0;
+    virtual HRESULT __stdcall GetASCOMPASSParameter (
+        VARIANT * * f_cdscompasssetting_param ) = 0;
+    virtual HRESULT __stdcall OnOffCDSDebug (
+        long f_OnOff ) = 0;
+    virtual HRESULT __stdcall OnOffAsCompass (
+        int f_protocol,
+        long f_OnOff ) = 0;
+    virtual HRESULT __stdcall CDSDebugClosed (
+        VARIANT * * f_compass_debug_param,
+        long f_set ) = 0;
+    virtual HRESULT __stdcall CoilSelectionClosed (
+        long f_ok_pressed ) = 0;
+    virtual HRESULT __stdcall SetCDSCheckCoil (
+        int f_check ) = 0;
+    virtual HRESULT __stdcall GetASCompassFlag (
+        int f_acqorder,
+        long * f_compass_flag ) = 0;
+    virtual HRESULT __stdcall GetScanTimeForCurrProt (
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall SetScanProtocolInfoFromGUI (
+        VARIANT * pdata ) = 0;
+    virtual HRESULT __stdcall GetCouchMethodForProt (
+        int f_acq_order,
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall OnShowHidePQM (
+        long f_show_flag ) = 0;
+    virtual HRESULT __stdcall SetAvSpdrMap (
+        long f_flag_val ) = 0;
+    virtual HRESULT __stdcall GetSFTMenuXMLData (
+        VARIANT * * pdata ) = 0;
+    virtual HRESULT __stdcall GetSFTParamValue (
+        VARIANT * * f_param,
+        int f_acq_order ) = 0;
+    virtual HRESULT __stdcall GetToolMenuXMLData (
+        VARIANT * * pdata ) = 0;
+    virtual HRESULT __stdcall GetPresetItem (
+        VARIANT * * pdata ) = 0;
+    virtual HRESULT __stdcall GetScanCommentXMLData (
+        VARIANT * * pdata ) = 0;
+    virtual HRESULT __stdcall GetAutoInsertedSeqDataToDisplay (
+        VARIANT * pdata,
+        int * f_insertedmappos,
+        int * f_target_pos,
+        int * f_is_shim_required,
+        int * f_is_map_required ) = 0;
+    virtual HRESULT __stdcall GetTargetProtInformation (
+        int * f_target_pos ) = 0;
+    virtual HRESULT __stdcall GetScanAgent (
+        int f_protocol_index,
+        VARIANT * f_scan_agent ) = 0;
+    virtual HRESULT __stdcall GetNRFilterStringForProtocol (
+        int f_acq_order,
+        int f_NRFLG,
+        VARIANT * f_NRVal ) = 0;
+    virtual HRESULT __stdcall InvokeMRSProcessTool (
+        int f_acq_order ) = 0;
+    virtual HRESULT __stdcall GetMRSLicense ( ) = 0;
+    virtual HRESULT __stdcall IsSelectedSeqMRS (
+        int f_acq_order ) = 0;
+    virtual HRESULT __stdcall SetIsValidWFDAScan (
+        long f_is_valid_wfda_scan ) = 0;
+    virtual HRESULT __stdcall SendIndex (
+        int f_index ) = 0;
+    virtual HRESULT __stdcall CheckPlnStatus (
+        int f_acq_order ) = 0;
+    virtual HRESULT __stdcall IsProtocolInScan (
+        int f_acq_order ) = 0;
+    virtual HRESULT __stdcall GetProtocolInformation (
+        VARIANT * pdata,
+        int f_acq_order ) = 0;
+    virtual HRESULT __stdcall SetAutoLocatorRunning (
+        long f_cala_appln_runng ) = 0;
+    virtual HRESULT __stdcall GetProtIndexAndWorkingMode (
+        int f_acq_order,
+        VARIANT * f_study_path ) = 0;
+    virtual HRESULT __stdcall GetProtIndexAndWorkingModeForDoneProt (
+        VARIANT * f_study_path ) = 0;
+    virtual HRESULT __stdcall IsValidSequenceToInvokeAutoLocator (
+        int f_acq_order,
+        int f_autolocatortype ) = 0;
+    virtual HRESULT __stdcall GetMRS_BRST_License ( ) = 0;
+    virtual HRESULT __stdcall GetEMTFilterStringForProtocol (
+        int f_acq_order,
+        VARIANT * f_EMTVal ) = 0;
+    virtual HRESULT __stdcall GetAutoLocatorPlannedStatus (
+        int f_acq_order,
+        int * f_cala_planned_status ) = 0;
+    virtual HRESULT __stdcall GetAutoLocatorLicense (
+        int f_autolocator_type ) = 0;
+    virtual HRESULT __stdcall GetScanMutex (
+        VARIANT * f_mutex ) = 0;
+    virtual HRESULT __stdcall GetPostProcessFlag ( ) = 0;
+    virtual HRESULT __stdcall CalculateTimeDiff (
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall ResetAutoScanTimer ( ) = 0;
+    virtual HRESULT __stdcall SetDelayTimeToVf (
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall ExecuteAutoScanStart ( ) = 0;
+    virtual HRESULT __stdcall AllocateGroupIdForDuplicateProtocols (
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall OnDeleteUpdateMasterSlave (
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall UpdateGroupNum ( ) = 0;
+    virtual HRESULT __stdcall GetProtocolInfoForAutoCopy (
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall GetMulitScanDynamic_License ( ) = 0;
+    virtual HRESULT __stdcall SetChannelModeSelection (
+        int f_selected_item,
+        long f_selectedchannel_mode,
+        int f_system_channel ) = 0;
+    virtual HRESULT __stdcall GetChannelModeSelection (
+        int f_selected_item,
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall GetNumSignalfromSelectedSection (
+        int f_selected_item,
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall SetNumChannels (
+        int f_prot,
+        int f_channel ) = 0;
+    virtual HRESULT __stdcall SetNumChannelsforChannelMode (
+        long f_use_coil_channel,
+        int f_system_enable_channel,
+        int f_limited_channel ) = 0;
+    virtual HRESULT __stdcall IsWireLessSystem ( ) = 0;
+    virtual HRESULT __stdcall SendWirelessGateParam (
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall GetWirelessGatingSelections (
+        VARIANT * f_data ) = 0;
+    virtual HRESULT __stdcall SetWirelessParamtoProt (
+        VARIANT * * f_wireless_param ) = 0;
+    virtual HRESULT __stdcall CheckAndGetWaitingForAutoScanStartAcqOrder (
+        int * f_waiting_for_auto_scan_acq_order ) = 0;
+    virtual HRESULT __stdcall GetMasterPositionForSlave (
+        int f_slave_index,
+        int * f_master_position ) = 0;
+    virtual HRESULT __stdcall ChangeSlaveToNormalProtocol (
+        int f_slave_index ) = 0;
+    virtual HRESULT __stdcall GetProtocolIndexToUpdate (
+        int * f_protocol_index ) = 0;
+    virtual HRESULT __stdcall GetMasterListForPlanMark (
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall PerformAutoCopyForMasterSlave (
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall UpdateSARInfo ( ) = 0;
+    virtual HRESULT __stdcall GetCoordinateList (
+        VARIANT * f_data ) = 0;
+    virtual HRESULT __stdcall GetRunningProcCount (
+        int * f_proc_count ) = 0;
+    virtual HRESULT __stdcall SendSAEInfo ( ) = 0;
+    virtual HRESULT __stdcall GetProtectedStatus (
+        BSTR bStr ) = 0;
+    virtual HRESULT __stdcall GetShimState (
+        int * f_shim_state ) = 0;
+    virtual HRESULT __stdcall GetAMBStatusData (
+        int * f_selected_items,
+        int count,
+        VARIANT * data ) = 0;
+    virtual HRESULT __stdcall AMBScanAbort ( ) = 0;
+    virtual HRESULT __stdcall AMBScanCancel (
+        VARIANT * data ) = 0;
+    virtual HRESULT __stdcall GetAmbPlan (
+        VARIANT * data ) = 0;
+    virtual HRESULT __stdcall AMBScanStart (
+        VARIANT * data,
+        long * f_is_scan_start ) = 0;
+    virtual HRESULT __stdcall GetAMBRearrangeIndexes (
+        int * f_rotocol_index_to_move,
+        int * f_target_index ) = 0;
+    virtual HRESULT __stdcall AMBReArrange (
+        int f_drag_index,
+        int f_drop_index ) = 0;
+    virtual HRESULT __stdcall GetAMBAutoScanItems (
+        int * * f_arr_items,
+        int * f_count,
+        long * l_is_auto_scan_on ) = 0;
+    virtual HRESULT __stdcall GetAMBMasterProtocols (
+        VARIANT * f_data ) = 0;
+    virtual HRESULT __stdcall GetAMBLicense ( ) = 0;
+    virtual HRESULT __stdcall GetAMBShimMapArray (
+        VARIANT * f_data ) = 0;
+    virtual HRESULT __stdcall GetAMBIndexToUdpate ( ) = 0;
+    virtual HRESULT __stdcall CheckSlaveProtocolForDuplicate (
+        int * f_selected_items,
+        int f_count ) = 0;
+    virtual HRESULT __stdcall GetAMBSlaveCount (
+        int * f_count ) = 0;
+    virtual HRESULT __stdcall AMBSlaveMatchSequenceParam (
+        VARIANT * f_pdata,
+        int f_start_index,
+        int f_end_index ) = 0;
+    virtual HRESULT __stdcall PqmPqAMBSlaveLost (
+        int * f_selected_list,
+        int * f_selected_count,
+        long * f_slave_exist ) = 0;
+    virtual HRESULT __stdcall SetIsAMBPlanning (
+        long f_is_amb_planning ) = 0;
+    virtual HRESULT __stdcall GetIndexForParentImageRemoved (
+        int * f_acq_order ) = 0;
+    virtual HRESULT __stdcall CheckAMBMenuClickConditions (
+        int * f_selected_items,
+        int count,
+        long * f_return ) = 0;
+    virtual HRESULT __stdcall GetAPCRetry (
+        long * f_is_apc_retry ) = 0;
+    virtual HRESULT __stdcall ReConnectSARManager ( ) = 0;
+    virtual HRESULT __stdcall HandleAbortFailForProtocol ( ) = 0;
+    virtual HRESULT __stdcall CalcSARControlAndPutVFForAll ( ) = 0;
+    virtual HRESULT __stdcall GetSARControlLicense ( ) = 0;
+    virtual HRESULT __stdcall GetMaxTimeForPagerTimer (
+        int * f_fax_pager_timer_time ) = 0;
+    virtual HRESULT __stdcall GetStudyLock (
+        VARIANT * f_mutex ) = 0;
+    virtual HRESULT __stdcall GetSarInfoPtrForIndex (
+        VARIANT * f_pdata ) = 0;
+    virtual HRESULT __stdcall GetGDCSeriesLOIDForProtocol (
+        int * f_prot_idx,
+        VARIANT * f_seriesloid ) = 0;
+    virtual HRESULT __stdcall GetTiPrepLicense (
+        int f_tiprep_type ) = 0;
+    virtual HRESULT __stdcall IsProtocolforTiPrep (
+        int f_protocol_index ) = 0;
+    virtual HRESULT __stdcall CanTiPrepEnable ( ) = 0;
+};
+
+//
+// Named GUID constants initializations
+//
+
+extern "C" const GUID __declspec(selectany) LIBID_IPCCOMLib =
+    {0xff01ef82,0x9016,0x4b64,{0xaf,0x2a,0xbe,0xf8,0x00,0x94,0xad,0x62}};
+extern "C" const GUID __declspec(selectany) IID__IPqmIpcComEvents =
+    {0xbf9a6083,0x0ee0,0x4a18,{0x83,0xf0,0xf6,0xae,0xa7,0xf9,0xd1,0x31}};
+extern "C" const GUID __declspec(selectany) CLSID_PqmIpcCom =
+    {0x577f5e9a,0xb956,0x4448,{0x9f,0xe4,0x21,0x33,0x18,0x81,0x4d,0xaf}};
+extern "C" const GUID __declspec(selectany) IID_IPqmIpcCom =
+    {0xd29723f3,0xc8cc,0x453c,{0xaa,0x93,0x80,0x30,0x02,0x1b,0x73,0xd0}};
+
+} // namespace IPCCOMLib
+
+#pragma pack(pop)

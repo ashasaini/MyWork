@@ -1,0 +1,26 @@
+// ISectionData.cpp: implementation of the ISectionData class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "ISectionData.h"
+
+#ifdef _DEBUG
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#define new DEBUG_NEW
+#endif
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+ISectionData::ISectionData()
+{
+
+}
+
+ISectionData::~ISectionData()
+{
+
+}

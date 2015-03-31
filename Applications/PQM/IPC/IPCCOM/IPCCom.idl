@@ -1,0 +1,333 @@
+ /*****************************************************************************
+ *
+ *  (c) Copyright 2007 TOSHIBA Corporation. All Rights Reserved
+ *
+ *  File Name: IPCCom.idl : IDL source for IPCCom.dll
+ *  Overview: Implementation of CIPCCom class.
+ *  Last Modified: 2007/8/10 12:00:00
+ *****************************************************************************
+ *                       Revision History
+ *****************************************************************************
+ *  Revision      Author           Date & Time            Changes
+ *  ==========================================================================
+ *   1.0          Patni            2007/6/15 12:00:00     PQM5 Baselined code
+ *   2.0          Patni            2007/8/10 12:00:00     Implemented PQM6 requirements & Formatted
+ *
+ *****************************************************************************/
+
+// This file will be processed by the MIDL tool to
+// produce the type library (IPCCom.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+    [
+        object,
+        uuid(D29723F3-C8CC-453C-AA93-8030021B73D0),
+        dual,
+        helpstring("IPqmIpcCom Interface"),
+        pointer_default(unique)
+    ]
+    interface IPqmIpcCom : IDispatch
+    {
+		//+Patni-ARD/2010Apr08/Modified/JaFT# IR-100
+        [id(1), helpstring("method Initialize")] HRESULT Initialize(int f_mode, VARIANT* f_config_data);
+        [id(2), helpstring("method StartScan")] HRESULT StartScan( VARIANT* f_pVariant, int f_position );
+        [id(3), helpstring("method AbortScan")] HRESULT AbortScan();
+        [id(4), helpstring("method PauseScan")] HRESULT PauseScan();
+        [id(5), helpstring("method ResumeScan")] HRESULT ResumeScan();
+        [id(6), helpstring("method MrsScanClose")] HRESULT MrsScanClose();
+        [id(10),helpstring("method ReceiveLOID")] HRESULT ReceiveLOID(BSTR f_strpatientloid,BSTR f_strstudyloid, BSTR f_pas_path);
+        [id(12),helpstring("method ReceiveSeriesAll")] HRESULT ReceiveSeriesAll(BSTR bStr);
+        [id(13),helpstring("method ReceiveSeriesOrder")] HRESULT ReceiveSeriesOrder(BSTR bStr, int dropindex);
+        [id(18),helpstring("method ConnectVoiceManager")] HRESULT ConnectVoiceManager(int id);
+        [id(19),helpstring("method SetAutoVoice")] HRESULT SetAutoVoice(BOOL flag);
+        [id(20),helpstring("method UpdateComment")] HRESULT UpdateComment(BSTR bstr,BSTR scancomment,BSTR scanid);
+        [id(21),helpstring("method OnPQMCloseButton")] HRESULT OnPQMCloseButton();
+        [id(22),helpstring("method GetColorDataEx")] HRESULT GetColorDataEx(VARIANT* data);
+	//Patni-PJS/2010Nov23///TMSC-REDMINE-774
+        //[id(23),helpstring("method GetCoilData")] HRESULT GetCoilData(VARIANT * pData);
+        [id(24), helpstring("method GetSeqData")] HRESULT GetSeqData(VARIANT *pdata, int mode);
+        [id(27), helpstring("method DuplicateSequence")] HRESULT DuplicateSequence(VARIANT* pData, BSTR bstr, const int f_index_duplicating_prot);
+        [id(29), helpstring("method GetSeqParamNameList")] HRESULT GetSeqParamNameList(VARIANT *pData);
+        [id(30), helpstring("method DeleteSequence")] HRESULT DeleteSequence(BSTR bstr);
+        [id(32), helpstring("method GetMaxProtocolLimit")] HRESULT GetMaxProtocolLimit(long * MaxProtLimit);
+        [id(33), helpstring("method WriteTraceLog")] HRESULT WriteTraceLog(LPCTSTR domain_name, unsigned long marker_val, LPCTSTR func_name,LPCTSTR log_text,int detail_trace_log);
+        [id(34), helpstring("method WriteOpeLog")] HRESULT WriteOpeLog(WORD opeation_id);
+        [id(35), helpstring("method WriteEventLog")] HRESULT WriteEventLog(BSTR err_msg, int error_level, BSTR code_line,int error_line,int detail_error_log);	//Patni-MP/2010May24/Modified/IR-82
+        [id(36), helpstring("method PQMDisplayError")] HRESULT PQMDisplayError(BSTR error_msg,BSTR file_name, UINT line_Number, int error_level, DWORD msg_id,BSTR event_source,int f_detail_error_log );
+        [id(37), helpstring("method UpdateGUIControlsInDB")] HRESULT UpdateGUIControlsInDB(VARIANT* pData, BSTR f_seriesid);
+        [id(38), helpstring("method StartRFLPrescan")] HRESULT StartRFLPrescan([in] int scanindex);
+        [id(39), helpstring("method StartCFAPrescan")] HRESULT StartCFAPrescan([in] int scanindex);
+        [id(40), helpstring("method SendGateModeInfo")] HRESULT SendGateModeInfo(int f_gate_mode);
+        [id(41), helpstring("method PutInjectTimeInDB")] HRESULT PutInjectTimeInDB();       
+        [id(43), helpstring("method GetAPCHoldValue")] HRESULT GetAPCHoldValue([out,retval] BOOL *holdvalue);
+        [id(44), helpstring("method ChangeShimCenterFrequency")] HRESULT ChangeShimCenterFrequency([in] double fsyvalue);
+        [id(45), helpstring("method SetAPCHoldValue")] HRESULT SetAPCHoldValue([in] BOOL holdvalue);        
+		// + Patni-Sribanta/2010Jun09/Modified/MVC8032
+        //[id(47), helpstring("method SetMultiCovCaution")] HRESULT SetMultiCovCaution(BOOL f_multicovcaution);
+        [id(48), helpstring("method SetReceiverCoilID")] HRESULT SetReceiverCoilID(long f_receiver_coilid);
+        [id(49), helpstring("method SetAnatomy")] HRESULT SetAnatomy(int f_anatomy_id);
+        [id(50), helpstring("method GetSeriesCount")] HRESULT GetSeriesCount(int *seriescnt);        
+		[id(52), helpstring("method PQMDisplayScanError")] HRESULT PQMDisplayScanError([in] int f_errorid, [in] BSTR f_errorstr, [in] int f_errorlevel, [in] BSTR f_errorsource);
+		[id(53), helpstring("method SendSequencesToMemory")] HRESULT SendSequencesToMemory(VARIANT* pData);
+		[id(54), helpstring("method SetPQMMode")] HRESULT SetPQMMode([in] int mode);
+		[id(55), helpstring("method SetExeAutoVoice")] HRESULT SetExeAutoVoice(int);
+        [id(56), helpstring("method UpdateGUIControlsInVarfieldDB")] HRESULT UpdateGUIControlsInVarfieldDB(VARIANT* pData, int f_scan_index);
+		//Patni-HAR/2010Sep20/Modified/Rename function from SendIndex() to DeleteProtocolFromVarField() SM Refarctoring.
+		[id(58), helpstring("method DeleteProtocolFromVarField")] HRESULT DeleteProtocolFromVarField(int f_index);
+		[id(60), helpstring("method DuplicateProtocol")] HRESULT DuplicateProtocol(int f_from_pos, int f_to_pos,int f_group_id);//Patni-AKR/Added-Parameter/2010-Dec-30/NFD002_2-ProductReq
+		[id(61), helpstring("method DuplicateSequenceInVarfield")] HRESULT DuplicateSequenceInVarfield(int f_pos_list);
+		[id(62), helpstring("method ReArrange")] HRESULT ReArrange(int f_drag_index,int f_drop_index);
+		[id(63), helpstring("method SetShimmWBCoil")] HRESULT SetShimmWBCoil(BOOL f_shim_wb_coil);
+		[id(64), helpstring("method GetSeqDataofDisplaySequences")] HRESULT GetSeqDataofDisplaySequences(VARIANT *pdata, int f_mode, int f_firstseq);
+		[id(65), helpstring("method SetShimFSYFlag")] HRESULT SetShimFSYFlag(int f_shimfsy_flag);
+		[id(66), helpstring("method SetPrescanHook")] HRESULT SetPrescanHook(BOOL f_prescan_hook);
+		[id(67), helpstring("method PQMManualPrescanClose")] HRESULT PQMManualPrescanClose();
+		[id(68), helpstring("method PQMManualPrescanApply")] HRESULT PQMManualPrescanApply(VARIANT* f_pdata);
+		[id(69), helpstring("method GetManualPreScanDefaultData")] HRESULT GetManualPreScanDefaultData(VARIANT** f_pdata);
+		[id(70), helpstring("method GetMRSDefaultValue")] HRESULT GetMRSDefaultValue(VARIANT**);
+		[id(71), helpstring("method MrsScanStartUiCB")] HRESULT MrsScanStartUiCB(VARIANT*);
+		// MEITEC/2010Aug06/Added/REDMINE-443
+		[id(72), helpstring("method ProconReqUiCB")] HRESULT ProconReqUiCB(int, int ,int);
+		[id(73), helpstring("method PqmSeverConfigToProCon")] HRESULT PqmSeverConfigToProCon(int, int, int *, int);
+		[id(74), helpstring("method SetAutoPlan")] HRESULT SetAutoPlan(int);
+		[id(75), helpstring("method SetPlanAndScan")] HRESULT SetPlanAndScan(int);
+		[id(76), helpstring("method SetAutoView")] HRESULT SetAutoView(int);
+		[id(78), helpstring("method SetSkipRgn")] HRESULT SetSkipRgn(int);
+		[id(79), helpstring("method SetAllCoverageRgn")] HRESULT SetAllCoverageRgn(int);
+		[id(80), helpstring("method SetPrepWbCoil")] HRESULT SetPrepWbCoil(int);
+		[id(81), helpstring("method SendElectrodeType")] HRESULT SendElectrodeType(int);
+		[id(82), helpstring("method SetActiveDialog")] HRESULT SetActiveDialog(int, BOOL);
+		[id(83), helpstring("method SetScanOffsetValue")] HRESULT SetScanOffsetValue(int index,float f_scanoffset_x,float f_scanoffset_y,float f_scanoffset_z, const BOOL f_set_mdoe);
+		//Patni-ARD/2010Apr08/Commented/JaFT# IR-100 code review
+		//[id(84), helpstring("method GetContrastAgent")] HRESULT GetContrastAgent(VARIANT** pData);
+		[id(85), helpstring("method GetScanAnatomy")] HRESULT GetScanAnatomy(VARIANT** pData);
+		[id(86), helpstring("method GetCoilSelectionData")] HRESULT GetCoilSelectionData(VARIANT *f_pdata, int f_mode);
+		[id(87), helpstring("method SendMessageToAcqManForCoil")] HRESULT SendMessageToAcqManForCoil(int f_mode, int f_acq_order);
+		[id(88), helpstring("method GetConnectCoilInfo")] HRESULT GetConnectCoilInfo(VARIANT *f_data);
+		[id(89), helpstring("method SendCoilSelReadyToIPC")] HRESULT SendCoilSelReadyToIPC(int f_index);
+		[id(90), helpstring("method GetShowCoilList")] HRESULT GetShowCoilList(VARIANT *f_data);
+		[id(91), helpstring("method GetSelectCoilList")] HRESULT GetSelectCoilList(VARIANT *f_data);
+		[id(92), helpstring("method SendSelectedCoilListToIPC")] HRESULT SendSelectedCoilListToIPC(VARIANT *pData,int f_protocol);
+		[id(93), helpstring("method SendConnectedCoilListToIPC")] HRESULT SendConnectedCoilListToIPC(VARIANT *pData, int f_protocol);
+		[id(94), helpstring("method GetCoilNameFromAcqOrder")] HRESULT GetCoilNameFromAcqOrder(int f_acq_order,VARIANT**  coilnamefrom);
+		[id(95), helpstring("method GetInsideLimit")] HRESULT GetInsideLimit(int f_index, int *f_in_side_limit, int *f_out_side_limit, BOOL *f_enable);
+		[id(96), helpstring("method OnPQMExit")] HRESULT OnPQMExit();
+		[id(97), helpstring("method SetDBDtCancelFlag")] HRESULT SetDBDtCancelFlag(BOOL f_dbdt_flag);
+		[id(98), helpstring("method SetMoveLocatorMode")] HRESULT SetMoveLocatorMode(BOOL f_flag);
+		[id(99), helpstring("method SetBatchForSARNCoil")] HRESULT SetBatchForSARNCoil(BOOL f_flag);
+		[id(100), helpstring("method GetConnectedCoilListForDisplayFromIPC")] HRESULT GetConnectedCoilListForDisplayFromIPC(VARIANT *f_data);
+		[id(101), helpstring("method GetConnectedCoilInformationForGUIDisplay")] HRESULT GetConnectedCoilInformationForGUIDisplay(BOOL f_flag);
+		[id(102), helpstring("method GetControlValueFromDB")] HRESULT GetControlValueFromDB(VARIANT* f_pdata, int f_scan_index);
+		[id(103), helpstring("method GetCurrentWSEEditProt")] HRESULT GetCurrentWSEEditProt(VARIANT* f_data);
+		[id(104), helpstring("method GetGateInfoList")] HRESULT GetGateInfoList(VARIANT *pData);
+		[id(105), helpstring("method SendAcqInfoForGate")] HRESULT SendAcqInfoForGate();
+		[id(106), helpstring("method ConnectToAcqMan")] HRESULT ConnectToAcqMan();
+		[id(107), helpstring("method CheckNextProtocol")] HRESULT CheckNextProtocol(int l_protocol_no, BOOL f_flag);
+		[id(108), helpstring("method GetSequenceInformation")] HRESULT GetSequenceInformation(VARIANT* f_data, int f_acq_order);
+		[id(109), helpstring("method ConnectToProconFromGUI")] HRESULT ConnectToProconFromGUI();
+		//Patni-ARD/2009June1/Added/JFT# PQM-SR GL_SR_SQSaved
+		[id(110), helpstring("method GetNewSeriesLoids")] HRESULT GetNewSeriesLoids(VARIANT *f_newseriesloid);
+		//Patni-HAR/2010Jun23/Modified/MVC008324_2
+		[id(111), helpstring("method GetCurrentSarInfoToDisplay")] HRESULT GetCurrentSarInfoToDisplay(VARIANT** pdata);
+		[id(112), helpstring("method GetIPCTopMostWaitAcqOrder")] HRESULT GetIPCTopMostWaitAcqOrder(int *f_acqorder);
+		[id(113), helpstring("method FileCopy")] HRESULT FileCopy(BSTR f_existingfilename, BSTR f_newfilename);
+		[id(114), helpstring("method GetStudyPath")] HRESULT GetStudyPath(VARIANT *pData);
+		[id(115), helpstring("method GetHasParent")] HRESULT GetHasParent(int f_acq_order);
+		[id(116), helpstring("method OnPQMDeleteProtocol")] HRESULT OnPQMDeleteProtocol(int f_protocol_index);
+		[id(117), helpstring("method OnPQMDuplicateProtocol")] HRESULT OnPQMDuplicateProtocol(int f_index_to_duplicate, int f_duplicat);
+		[id(118), helpstring("method RecvCallBack")] HRESULT RecvCallBack(VARIANT *messageParam, VARIANT *messageRet, VARIANT *pCustom);
+		//+ Patni-PJS/2009Jul23/Modify/IDS#442,MVC002699
+		[id(119), helpstring("method GetSarInfoPtr")] HRESULT GetSarInfoPtr(VARIANT *pData);
+		[id(120), helpstring("method SetProtocolIndex")] HRESULT SetProtocolIndex(int f_index);
+		// Patni-PJS/2009Jul29/Modified/MVC0003961
+		[id(121), helpstring("method GetCouchPos")] HRESULT GetCouchPos(VARIANT* f_pData);
+		[id(122), helpstring("method GetTotalSequeunces")] HRESULT GetTotalSequeunces(VARIANT* f_pData);
+		[id(123), helpstring("method GetGUIListProtocolInfo")] HRESULT GetGUIListProtocolInfo(VARIANT *pdata, int f_count_gui_list);
+		[id(124), helpstring("method GetDBDTCurrentMode")] HRESULT GetDBDTCurrentMode(int f_index , int *f_mode);
+		[id(125), helpstring("method GetCoilNameFromTransmiter")] HRESULT GetCoilNameFromTransmiter(int f_acq_order,VARIANT**  coilnamefrom);
+		[id(126), helpstring("method GetCoilNameFromReceiver")] HRESULT GetCoilNameFromReceiver(int f_acq_order,VARIANT**  coilnamefrom);
+		//Patni-Sribanta/2011Jan11/Commented/TMSC-REDMINE-1026
+		[id(127), helpstring("method InitializeTicks")] HRESULT InitializeTicks();//Patni-PJS/2009Sep23/Added/MVC4941
+		[id(128), helpstring("method GetCoilSysSetting")] HRESULT GetCoilSysSetting(VARIANT* f_data); //Patni-AMT/2009Oct08/Added/MVC005124-Code Review-MAX channel
+		[id(129), helpstring("method GetPqmPqIsGlocOk")] HRESULT GetPqmPqIsGlocOk();//Patni-Manishkumar/12Oct
+		[id(130), helpstring("method GetEnableDisableAutoTransfer")] HRESULT GetEnableDisableAutoTransfer();//Patni-ARD/2009Oct28/Added/IR 85 Auto Transfer
+		[id(131), helpstring("method UpdateProtocolDataInSeries")] HRESULT UpdateProtocolDataInSeries(VARIANT* pData, BSTR f_seriesid,int f_prot_index);//Patni-RSG/2009Nov25/Added/MSA0248-0033
+		//Patni-DH+ARD/2009Dec03/Added/DeFT# MVC005787+MSA0248-00087
+		[id(132), helpstring("method GetPatientScanoffset")] HRESULT GetPatientScanoffset(int f_acq_order,VARIANT** f_scanoffset);
+		[id(133), helpstring("method RemoteCheckActiveFlag")] HRESULT RemoteCheckActiveFlag();//Patni-Manish/2010Jan11/Added/Ph#3#IR-122/RemoteConsole		
+		
+		//+Patni-DKH/2010Jan14/Added/IR-87,Plan Duplicator 
+		[id(135), helpstring("method InitPlanDuplicateSettings")] HRESULT InitPlanDuplicateSettings();
+		[id(136), helpstring("method ReadPlanDuplicateSettings")] HRESULT ReadPlanDuplicateSettings(VARIANT** f_data);
+		[id(137), helpstring("method WritePlanDuplicateMask")] HRESULT WritePlanDuplicateMask(long f_imask , BOOL f_bsaveflag);
+		//-Patni-DKH/2010Jan14/Added/IR-87,Plan Duplicator 
+		//+Patni-DKH/2010Jan20/Added/PH#3#/IR86/DebugWindow
+		[id(138), helpstring("method StartPQMDebug")] HRESULT StartPQMDebug(int f_debugOption,UINT f_buttonmask);
+		[id(139), helpstring("method PqmDebugStatusLogOpen")] HRESULT PqmDebugStatusLogOpen();
+		[id(140), helpstring("method SelectListandTotalCnt")] HRESULT SelectListandTotalCnt(int *, int);
+		//-Patni-DKH/2010Jan20/Added/PH#3#/IR86/DebugWindow#
+		//Patni-DKH/2010Jan29/Added/PH#3#/FBI
+		[id(141), helpstring("method SetPqmPmDelay")] HRESULT SetPqmPmDelay(int f_delay1,int f_delay2);
+		[id(142), helpstring("method SetChildThreadStatusToIPC")] HRESULT SetChildThreadStatusToIPC(int *f_pData, int f_count, int f_child_thread_status);
+		[id(143), helpstring("method SetFirstWaitProtForAutoScan")] HRESULT SetFirstWaitProtForAutoScan(const int f_acqorder);
+		[id(144), helpstring("method GetMagneticCenterPos")] HRESULT GetMagneticCenterPos(VARIANT** f_data);
+		[id(145), helpstring("method GetCDSDebugParam")] HRESULT GetCDSDebugParam(VARIANT**  f_compass_debug_param);
+		[id(146), helpstring("method SetASCOMPASSParameter")] HRESULT SetASCOMPASSParameter(VARIANT**  f_cdscompasssetting_param);
+		[id(147), helpstring("method GetASCOMPASSParameter")] HRESULT GetASCOMPASSParameter(VARIANT**  f_cdscompasssetting_param);
+		[id(148), helpstring("method OnOffCDSDebug")] HRESULT OnOffCDSDebug(BOOL f_OnOff);
+		[id(149), helpstring("method OnOffAsCompass")] HRESULT OnOffAsCompass(int f_protocol, BOOL f_OnOff);
+		[id(150), helpstring("method CDSDebugClosed")] HRESULT CDSDebugClosed(VARIANT** f_compass_debug_param, BOOL f_set);
+		[id(151), helpstring("method CoilSelectionClosed")] HRESULT CoilSelectionClosed(BOOL f_ok_pressed);
+		[id(152), helpstring("method SetCDSCheckCoil")] HRESULT SetCDSCheckCoil(int f_check);
+		[id(153), helpstring("method GetASCompassFlag")] HRESULT GetASCompassFlag(int f_acqorder, BOOL* f_compass_flag);
+		
+		//Patni-PJS/2010Mar11/Added/DeFT# MCM0229-00178
+		[id(154), helpstring("method GetScanTimeForCurrProt")] HRESULT GetScanTimeForCurrProt(VARIANT* f_pdata);
+		[id(155), helpstring("method SetScanProtocolInfoFromGUI")] HRESULT SetScanProtocolInfoFromGUI(VARIANT *pData); //Patni-HAR/2010Feb24/Added/MSA0251-00187
+		//Patni-PJS/2010Apr22/Added/JaFT# MVC007534
+		[id(156), helpstring("method GetCouchMethodForProt")] HRESULT GetCouchMethodForProt(int f_acq_order, VARIANT *f_pData);
+		//Patni-RUP/2010Apr21/Added/To Fix TMSC-REDMINE-68 defect
+		[id(157), helpstring("method OnShowHidePQM")] HRESULT OnShowHidePQM(BOOL f_show_flag);
+		[id(158), helpstring("method SetAvSpdrMap")] HRESULT SetAvSpdrMap(BOOL f_flag_val);
+		[id(159), helpstring("method GetSFTMenuXMLData")] HRESULT GetSFTMenuXMLData(VARIANT **pData);
+		[id(160), helpstring("method GetSFTParamValue")] HRESULT GetSFTParamValue(VARIANT** f_param, int f_acq_order);
+		[id(161), helpstring("method GetToolMenuXMLData")] HRESULT GetToolMenuXMLData(VARIANT **pData);
+		// MEITEC/2010Aug06/Added/REDMINE-443
+		[id(162), helpstring("method GetPresetItem")] HRESULT GetPresetItem(VARIANT **pData);
+		[id(163), helpstring("method GetScanCommentXMLData")] HRESULT GetScanCommentXMLData(VARIANT **pData);
+		//+Patni-AM/july6/Added/NFD001AutoMap		
+		[id(165), helpstring("method GetAutoInsertedSeqDataToDisplay")] HRESULT GetAutoInsertedSeqDataToDisplay(VARIANT *pdata,int *f_insertedmappos,int* f_target_pos, int* const f_is_shim_required, int* const f_is_map_required);
+		[id(166), helpstring("method GetTargetProtInformation")] HRESULT GetTargetProtInformation(int* f_target_pos);		
+		//-Patni-AM/july6/Added/NFD001AutoMap
+
+		//+Patni-AM/july13/Added/NFD001AutoShim		
+		//Patni-Abhishek/2010Dec18/Added/Redmine-1074_part1
+		[id(167), helpstring("method GetScanAgent")] HRESULT GetScanAgent(const int f_protocol_index, VARIANT* f_scan_agent);
+		//Patni-Sudhir/2011Jan13/Added/Redmine-434
+		[id(168), helpstring("method GetNRFilterStringForProtocol")] HRESULT GetNRFilterStringForProtocol(const int f_acq_order,const int f_NRFLG,VARIANT* f_NRVal);
+		//+Patni-PJS/2011Feb24/Added/TMSC_REDMINE-1480
+		[id(169), helpstring("method InvokeMRSProcessTool")] HRESULT InvokeMRSProcessTool(const int f_acq_order);
+		[id(170), helpstring("method GetMRSLicense")] HRESULT GetMRSLicense();
+		[id(171), helpstring("method IsSelectedSeqMRS")] HRESULT IsSelectedSeqMRS(const int f_acq_order);
+		//-Patni-PJS/2011Feb24/Added/TMSC_REDMINE-1480
+		
+		//+Patni-PJS/2011Feb21/Added/IR-97
+		[id(172), helpstring("method SetIsValidWFDAScan")] HRESULT SetIsValidWFDAScan(BOOL f_is_valid_wfda_scan);
+		[id(173), helpstring("method SendIndex")] HRESULT SendIndex(int f_index);
+		//-Patni-PJS/2011Feb21/Added/IR-97
+		//+Patni-PJS/2011Jan29/Modified/WFDA/IR-97
+		[id(174), helpstring("method CheckPlnStatus")] HRESULT CheckPlnStatus(int f_acq_order);
+		[id(175), helpstring("method IsProtocolInScan")] HRESULT IsProtocolInScan(int f_acq_order);
+		[id(176), helpstring("method GetProtocolInformation")] HRESULT GetProtocolInformation(VARIANT* pData, int f_acq_order);
+		//-Patni-PJS/2011Jan29/Modified/WFDA/IR-97
+		[id(177), helpstring("method SetAutoLocatorRunning")] HRESULT SetAutoLocatorRunning(BOOL f_cala_appln_runng);
+		[id(178), helpstring("method GetProtIndexAndWorkingMode")] HRESULT GetProtIndexAndWorkingMode(int f_acq_order,VARIANT* f_study_path);
+		[id(179), helpstring("method GetProtIndexAndWorkingModeForDoneProt")] HRESULT GetProtIndexAndWorkingModeForDoneProt(VARIANT* f_study_path);
+		[id(180), helpstring("method IsValidSequenceToInvokeAutoLocator")] HRESULT IsValidSequenceToInvokeAutoLocator(const int f_acq_order,const int f_autolocatortype);
+		[id(181), helpstring("method GetMRS_BRST_License")] HRESULT GetMRS_BRST_License();//Patni-RBJ/2011July5/Added/IR-168 Part5
+		[id(182), helpstring("method GetEMTFilterStringForProtocol")] HRESULT GetEMTFilterStringForProtocol(const int f_acq_order,VARIANT* f_EMTVal);
+		[id(183), helpstring("method GetAutoLocatorPlannedStatus")] HRESULT GetAutoLocatorPlannedStatus(const int f_acq_order,int * f_cala_planned_status);
+		[id(184), helpstring("method GetAutoLocatorLicense")] HRESULT GetAutoLocatorLicense(const int f_autolocator_type);
+		[id(185), helpstring("method GetScanMutex")] HRESULT GetScanMutex(VARIANT* f_mutex);
+		[id(186), helpstring("method GetPostProcessFlag")] HRESULT GetPostProcessFlag();
+		//+Patni-AKR/Added/2010-Dec-30/NFD002_2-ProductReq
+		[id(187), helpstring("method CalculateTimeDiff")] HRESULT CalculateTimeDiff([in,out,ref] VARIANT *f_pdata);
+		[id(188), helpstring("method ResetAutoScanTimer")] HRESULT ResetAutoScanTimer();
+		[id(189), helpstring("method SetDelayTimeToVf")] HRESULT SetDelayTimeToVf([in,out,ref] VARIANT *f_pdata);
+		[id(190), helpstring("method ExecuteAutoScanStart")] HRESULT ExecuteAutoScanStart();		
+		[id(191), helpstring("method AllocateGroupIdForDuplicateProtocols")] HRESULT AllocateGroupIdForDuplicateProtocols([in,out,ref] VARIANT *f_pdata);
+		[id(192), helpstring("method OnDeleteUpdateMasterSlave")] HRESULT OnDeleteUpdateMasterSlave([in,out,ref] VARIANT *f_pdata);
+		[id(193), helpstring("method UpdateGroupNum")] HRESULT UpdateGroupNum();
+		[id(194), helpstring("method GetProtocolInfoForAutoCopy")] HRESULT GetProtocolInfoForAutoCopy([in,out,ref] VARIANT *f_pdata);
+		//-Patni-AKR/Added/2010-Dec-30/NFD002_2-ProductReq
+		[id(195), helpstring("method GetMulitScanDynamic_License")] HRESULT GetMulitScanDynamic_License();
+		[id(196), helpstring("method SetChannelModeSelection")] HRESULT SetChannelModeSelection(const int f_selected_item, BOOL f_selectedchannel_mode, const int f_system_channel);
+		[id(197), helpstring("method GetChannelModeSelection")] HRESULT GetChannelModeSelection(const int f_selected_item, VARIANT* f_pdata); 
+		[id(198), helpstring("method GetNumSignalfromSelectedSection")] HRESULT GetNumSignalfromSelectedSection(const int f_selected_item, VARIANT* f_pdata); 
+		[id(199), helpstring("method SetNumChannels")] HRESULT SetNumChannels(const int f_prot, const int f_channel); 
+		[id(200), helpstring("method SetNumChannelsforChannelMode")] HRESULT SetNumChannelsforChannelMode(const BOOL f_use_coil_channel, const int f_system_enable_channel, const int f_limited_channel); // 20-Oct-11
+		[id(201), helpstring("method IsWireLessSystem")] HRESULT IsWireLessSystem();
+		[id(202), helpstring("method SendWirelessGateParam")] HRESULT SendWirelessGateParam(VARIANT* f_pdata);
+		[id(203), helpstring("method GetWirelessGatingSelections")]HRESULT GetWirelessGatingSelections(VARIANT* f_data);
+		[id(204), helpstring("method SetWirelessParamtoProt")] HRESULT SetWirelessParamtoProt(VARIANT**  f_wireless_param);
+		[id(205), helpstring("method CheckAndGetWaitingForAutoScanStartAcqOrder")] HRESULT CheckAndGetWaitingForAutoScanStartAcqOrder(int* f_waiting_for_auto_scan_acq_order);
+		[id(206), helpstring("method GetMasterPositionForSlave")] HRESULT GetMasterPositionForSlave(const int f_slave_index,int* f_master_position);
+		[id(207), helpstring("method ChangeSlaveToNormalProtocol")] HRESULT ChangeSlaveToNormalProtocol(const int f_slave_index);
+		[id(208), helpstring("method GetProtocolIndexToUpdate")] HRESULT GetProtocolIndexToUpdate(int* const f_protocol_index);
+		[id(209), helpstring("method GetMasterListForPlanMark")] HRESULT GetMasterListForPlanMark(VARIANT* f_pdata);
+		[id(210), helpstring("method PerformAutoCopyForMasterSlave")] HRESULT PerformAutoCopyForMasterSlave(VARIANT* const f_pdata);
+		[id(211), helpstring("method UpdateSARInfo")] HRESULT UpdateSARInfo();
+		[id(212), helpstring("method GetCoordinateList")] HRESULT GetCoordinateList(VARIANT *f_data);
+		[id(213), helpstring("method GetRunningProcCount")] HRESULT GetRunningProcCount(int* f_proc_count);
+		[id(214), helpstring("method SendSAEInfo")] HRESULT SendSAEInfo(); //IEC3rd-ProductReq
+		[id(215), helpstring("method GetProtectedStatus")] HRESULT GetProtectedStatus(BSTR bstr);
+		[id(216), helpstring("method GetShimState")] HRESULT GetShimState(int* f_shim_state);
+		[id(217), helpstring("method GetAMBStatusData")] HRESULT GetAMBStatusData(int* f_selected_items, int count, VARIANT* data);
+		[id(218), helpstring("method AMBScanAbort")] HRESULT AMBScanAbort();
+		[id(219), helpstring("method AMBScanCancel")] HRESULT AMBScanCancel(VARIANT* data);		
+		[id(221), helpstring("method GetAmbPlan")] HRESULT GetAmbPlan(VARIANT* data);
+		[id(222), helpstring("method AMBScanStart")] HRESULT AMBScanStart(VARIANT* data,BOOL* f_is_scan_start);
+		[id(223), helpstring("method GetAMBRearrangeIndexes")] HRESULT GetAMBRearrangeIndexes(int *f_rotocol_index_to_move,int *f_target_index);
+		[id(224), helpstring("method AMBReArrange")] HRESULT AMBReArrange(int f_drag_index, int f_drop_index);
+		[id(225), helpstring("method GetAMBAutoScanItems")] HRESULT GetAMBAutoScanItems(int **f_arr_items,int *f_count,BOOL *l_is_auto_scan_on);
+		[id(226), helpstring("method GetAMBMasterProtocols")] HRESULT GetAMBMasterProtocols(VARIANT *f_data);		
+		[id(228), helpstring("method GetAMBLicense")] HRESULT GetAMBLicense();
+		[id(229), helpstring("method GetAMBShimMapArray")] HRESULT GetAMBShimMapArray(VARIANT *f_data);
+		[id(230), helpstring("method GetAMBIndexFromIPC")] HRESULT GetAMBIndexToUdpate();		
+		[id(232), helpstring("method CheckSlaveProtocolForDuplicate")] HRESULT CheckSlaveProtocolForDuplicate(int* f_selected_items, int f_count);		
+		[id(233), helpstring("method GetAMBSlaveCount")] HRESULT GetAMBSlaveCount(int *f_count);
+		[id(234), helpstring("method AMBSlaveMatchSequenceParam")] HRESULT AMBSlaveMatchSequenceParam(VARIANT* f_pData, const int f_start_index, const int f_end_index);
+		[id(235), helpstring("method PqmPqAMBSlaveLost")] HRESULT PqmPqAMBSlaveLost(int *f_selected_list , int *f_selected_count,BOOL* f_slave_exist );
+		[id(236), helpstring("method SetIsAMBPlanning")] HRESULT SetIsAMBPlanning(const  BOOL f_is_amb_planning);
+		[id(237), helpstring("method GetIndexForParentImageRemoved")] HRESULT GetIndexForParentImageRemoved(int* f_acq_order);
+		[id(238), helpstring("method CheckAMBMenuClickConditions")] HRESULT CheckAMBMenuClickConditions(int* f_selected_items, int count,BOOL* f_return);
+		[id(239), helpstring("method GetAPCRetry")] HRESULT GetAPCRetry(BOOL* f_is_apc_retry);
+		[id(240), helpstring("method ReConnectSARManager")] HRESULT ReConnectSARManager();
+		[id(241), helpstring("method HandleAbortFailForProtocol")] HRESULT HandleAbortFailForProtocol();
+		[id(242), helpstring("method CalcSARControlAndPutVFForAll")] HRESULT CalcSARControlAndPutVFForAll();
+		[id(243), helpstring("method GetSARControlLicense")] HRESULT GetSARControlLicense();
+		[id(244), helpstring("method GetMaxTimeForPagerTimer")] HRESULT GetMaxTimeForPagerTimer(int* f_fax_pager_timer_time);
+		[id(245), helpstring("method GetStudyLock")] HRESULT GetStudyLock(VARIANT* f_mutex);
+		[id(246), helpstring("method GetSarInfoPtrForIndex")] HRESULT GetSarInfoPtrForIndex(VARIANT *f_pdata);	
+		[id(247), helpstring("method GetGDCSeriesLOIDForProtocol")] HRESULT GetGDCSeriesLOIDForProtocol(int * f_prot_idx, VARIANT * f_seriesloid);
+		[id(248), helpstring("method GetTiPrepLicense")] HRESULT GetTiPrepLicense(const int f_tiprep_type);
+		[id(249), helpstring("method IsProtocolforTiPrep")] HRESULT IsProtocolforTiPrep(int f_protocol_index);
+		[id(250), helpstring("method CanTiPrepEnable")] HRESULT CanTiPrepEnable();
+
+	};    
+
+[
+    uuid(FF01EF82-9016-4B64-AF2A-BEF80094AD62),
+    version(1.0),
+    helpstring("IPCCom 1.0 Type Library")
+]
+
+library IPCCOMLib
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+
+    [
+        uuid(BF9A6083-0EE0-4A18-83F0-F6AEA7F9D131),
+        helpstring("_IPqmIpcComEvents Interface")
+    ]
+
+    interface _IPqmIpcComEvents : IUnknown
+    {
+        
+        [helpstring("method SendMsgToUI")] HRESULT SendMsgToUI(int Msg);
+		// MEITEC/2010Apr23/Added/IR86
+		[helpstring("method DisplayDebugData")] HRESULT DisplayDebugData(BSTR f_displaydata);
+    };
+
+    [
+        uuid(577F5E9A-B956-4448-9FE4-213318814DAF),
+        helpstring("PqmIpcCom Class")
+    ]
+    coclass PqmIpcCom
+    {
+        [default] interface IPqmIpcCom;
+        [default, source] interface _IPqmIpcComEvents;
+    };
+};

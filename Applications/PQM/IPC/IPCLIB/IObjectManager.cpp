@@ -1,0 +1,26 @@
+// IObjectManager.cpp: implementation of the IObjectManager class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "IObjectManager.h"
+
+#ifdef _DEBUG
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#define new DEBUG_NEW
+#endif
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+IObjectManager::IObjectManager()
+{
+
+}
+
+IObjectManager::~IObjectManager()
+{
+
+}

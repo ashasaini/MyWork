@@ -1,0 +1,25 @@
+// ImageReader.cpp: implementation of the CImageReader class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "epi.h"
+#include "ImageReader.h"
+
+#ifdef _DEBUG
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#define new DEBUG_NEW
+#endif
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+CImageReader::CImageReader()
+{
+}
+
+CImageReader::~CImageReader()
+{
+}

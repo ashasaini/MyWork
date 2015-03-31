@@ -1,0 +1,1211 @@
+#
+# GENERAL name subspace
+#
+
+VarField:	SVN_GEN_DATA_FORM
+Common:		VFC_FORM
+	MAGNITUDE	0
+	PHASE		1
+	REAL_ONLY	2
+	IMGN_ONLY	3
+	COMPLEX		4
+	POLAR		5
+End:
+
+VarField:	SVN_GEN_DATA_DESC
+Common:		VFC_DATA
+	NONE	0	No meaning is attached to this dimension
+	RO	1	Readout
+	PE	2	Phase Encode
+	SE	3	Slice Encode
+End:
+
+VarField:	SVN_PLN_AUTO_VOICE
+VarField:	SVN_EXE_AUTO_VOICE
+Common:		VFC_AUTO_VOICE
+	NONE	0	オートボイスOFF
+	BREATH1	1	息止めオートボイス
+	BREATH2	2	息止めオートボイス
+	BREATH3	3	息止めオートボイス
+	MOTION	4	体動防止オートボイス
+End:
+
+#
+# NMRTOOLS name subspace
+#
+
+#
+# SCHEDULE name subspace
+#
+
+VarField:	SVN_SCH_GENDER
+Common:		VFC_GENDER
+	FEMALE		0x00	 女性      000
+	MALE		0x01	 男性      001
+	FEMALE_INFANT	0x02	 女性|幼児 010
+	MALE_INFANT	0x03	 男性|幼児 011
+	FEMALE_PREGNANT	0x04	 女性|妊婦 100
+	INFANT		0x02	 幼児      010
+	PREGNANT	0x04	 妊婦      100
+	OTHERS		0x1000
+End:
+
+VarField:	SVN_SCH_LANGUAGE
+Common:		VFC_LANG
+	ENGLISH     0
+	JAPANESE    1
+End:
+
+#
+# PLAN name subspace
+#
+
+VarField:	SVN_PLN_IMAGING_MODE
+Common:		VFC_IMAGING_MODE
+	2D		0	 Data acquired in 2D mode 
+	3D		1	 Data acquired in 3D mode 
+End:
+
+VarField:	SVN_PLN_APP_OPTION
+Common:		VFC_APP_OPTION 
+	TOF		1	 Time of Flight Angio 
+	PC		2	 Phase Contrast Angio 
+	AC		3	 Amplitude Contrast Angio 
+	SORS		4	 SORS 
+	WFOP		5	 Water-Fat Out of Phase 
+	LCS		6	 Low Chemical Shift 
+	FINE_SLICE	7	 Fine Slice 
+	ISCE		8	 ISCE 
+	PASTA		9	 PASTA 
+	FLUORO		10	 Fluoro 
+	MBW		11	 Matched Band Width 
+	DIET		12	 DIET 
+	ISCE1		101	 ISCE option 
+	ISCE2		102	 ISCE option 
+	ISCE3		103	 ISCE option 
+	FASE_SS		201	 FASE Single Shot 
+	FASE_TMP	202	 FASE with template 
+End:
+
+VarField:	SVN_PLN_ANGIO_OPTION
+Common:		VFC_ANGIO_OPTION
+	TOF		1	 Time of Flight Angio 
+	PC		2	 Phase Contrast Angio 
+	AC		3	 Amplitude Contrast Angio 
+	SORS		4	 SORS 
+End:
+
+VarField:	SVN_PLN_SE_OPTION
+Common:		VFC_SEOPT_BIT 
+	WFOP			1	 Water-Fat Out of Phase 
+	EXCITATION_ENCODE	(1<<1)	 Excitation Encoding 
+	LCS			(1<<2)	 Low Chemical Shift 
+	FINE_SLICE		(1<<3)	 Fine Slice 
+End:
+
+VarField:	SVN_PLN_MOTION_SUPPRESSION
+Common:		VFC_MSUP_BIT 
+# Note: first bit was left out by mistake. 
+	FLOW_COMP	(1<<1)	 Flow Compensation 
+	BREATH_HOLD	(1<<2)	 Breath hold 
+End:
+
+VarField:	SVN_PLN_SLICE_ORIENTATION
+Common:		VFC_ORI
+	TRANSAXIAL		0	 Transaxial 
+	SAGITTAL		1	 Sagittal 
+	CORONAL			2	 Coronal 
+	OTHER			3	 Other 
+	AXI_OBLIQUE		4	 Transaxial oblique 
+	SAG_OBLIQUE		5	 Sagittal oblique 
+	COR_OBLIQUE		6	 Coronal oblique 
+End:
+
+VarField:	SVN_PLN_PHASE_DIRECTION
+Common:		VFC_PE_DIR 
+	HEAD_FEET		0	 PE dir from head  to feet 
+	RIGHT_LEFT		1	 PE dir from right to left 
+	FRONT_BACK		2	 PE dir from front to back 
+	OTHER			3	 PE dir other 
+	AXI_PLANE		4	 PE dir axial plane 
+	SAG_PLANE		5	 PE dir sagittal plane 
+	COR_PLANE		6	 PE dir coronal plane 
+End:
+
+VarField:	SVN_PLN_WRAPAROUND_REDUCT
+Common:		VFC_WRAPAROUND_REDUCT
+	BIT_PE	1
+	BIT_RO	(1<<1)
+	BIT_SE	(1<<2)
+End:
+
+VarField:	SVN_PLN_GATING_METHOD
+Common:		VFC_GAT_METHOD_BIT
+Sub:	gatingMode
+	ECG		1	 ECG
+	PERIPHERAL	(1<<1)	 Peripheral
+	RESPIRATORY	(1<<2)	 Respiratory
+	RESP_EDGE	(1<<2)	 Respiratory
+	RESP_LEVEL	(1<<3)	 Respiratory Level Mode
+	RESP_ECG	(1<<4)	 Respiratory + ECG
+	RESP_PERP	(1<<5)	 Respiratory + Peripheral
+End:
+
+#VarField:	SVN_PLN_GATE_PARAM
+#Common:		VFC_GAT_MODE
+#	STANDARD		0	 Multi Slice Single Phase
+#	S_SLICE_M_PHASE		1	 Single Slice Multi Phase
+#	SEQUENCIAL_M_SLICE	2	 Sequential Multi Slice
+#	SEQUENTIAL_M_SLICE	2	 Sequential Multi Slice
+#	SEGMENTATION		3	 Segmented SE and FE
+#	ECG_PREP		4	 ECG Prep
+#	SEQUENTIAL_PACKING	5	 Sequential Packing
+#	RETRO			6	 Retro Mode
+#End:
+
+VarField:	SVN_PLN_GATING_ROTAT
+Common:		VFC_GAT_ROTAT
+	FORWARD		0	 Gating cycles acquired 1-N
+	REVERSE		1	 Gating cycles acquired N-1
+End:
+
+VarField:	SVN_PLN_RAW_AVERAG_MODE
+Common:		VFC_RAW_AVERAG_MODE
+	NORMAL		1
+	AFI		2
+	SEL		3
+End:
+
+VarField:	SVN_PLN_POST_ACQ_MODE
+Common:		VFC_MODE
+	NONE	                 0		No post ACQ actions
+	AUTO_RECON      	 (1L<<0)	Do Automatic Reconstruction
+	AUTO_VIEW       	 (1L<<1)	Do Autoview
+	AUTO_VIEW_CS    	 (1L<<2)	Display Center Slice via Auto View
+	RTL             	 (1L<<3)	Do Real Time Locator
+	RTL_EXTENDED    	 (1L<<4)	Do Extended Locator
+	EVOLVING_IMAGE  	 (1L<<5)	Do Evolving Image
+	CONCURRENT_RECON	 (1L<<6)	Do Concurrent Recon
+	DYNAMIC_RECON		 (1L<<7)	Not Dynamic Reconstruction
+End:
+
+VarField:	SVN_PLN_VIEWING_DIR
+Common:		VFC_VIEW_FROM
+	HEAD	0	 View images from head as default
+	FEET	1 	 	from feet as default
+End:
+
+VarField:	SVN_PLN_PATIENT_ORIENT -- These codes are used in VFT_PATORI
+Common:		VFC_PATORI
+# end_in codes:
+Sub:		end_in
+	HEAD_FIRST	0	 Patient entered magnet head first
+	FEET_FIRST	1	 Patient entered magnet feet first
+# side_up codes:
+Sub:		side_up
+	PRONE		0	 Patient has back side up in magnet
+	SUPINE		1	 Patient has front side up in magnet
+	LEFT_UP		2	 Patient has left side up in magnet
+	RIGHT_UP	3	 Patient has right side up in magnet
+End:
+
+VarField:	SVN_PLN_APP_CODE
+Common:		VFC_APP_CODE
+	SPIN_ECHO		 0  Spin Echo Application
+	FAST_SPIN_ECHO		 1  Fast Field Echo Application
+	FIELD_ECHO		 2  Field Echo Application
+	INVERSION_RECOVERY	 4  Inversion Recovery Application
+	FAST_FIELD_ECHO		 5  Fast Spin Echo Application
+	FAST_IR			 6  Fast Spin Echo + Inversoin Pulse
+	ANGIO			 7  Angiography Application
+	PHASE_SHIFT		 8  Phase-Shift MR-Angiography
+	QUAD_SE			10  Quad SE Application
+	QUAD_SPIN_ECHO		10  TAMI's definition
+	MULTI_EXCIT_SE		10  Multiple Excitation SE Application
+	QUAD_FE			11  Quad FE Application
+	QUAD_FIELD_ECHO		11  TAMI's definition
+	MULTI_EXCIT_FE		11  Multiple Excitation FE Application
+	FASE			12  Fast Asymmetric Spin Echo Application
+	HYEPI			13  Hybrid EPI
+	SSEPI_SE		15  Shingle Shot EPI (SE)
+	SSEPI_FE		16  Shingle Shot EPI (FE)
+	MSEPI_SE		17  Multi Shot EPI (SE)
+	MSEPI_FE		18  Multi Shot EPI (FE)
+	MRS			19  MR Spectroscopy
+	MRSCSI			20  MR Spectroscopy
+	FFE_EPI			21  Segmented FE_EPI
+	PREP			100 Visual Prep
+	PROBE			110 Probing
+End:
+
+VarField:	SVN_PLN_SPATIAL_PRESAT
+Common:		VFC_SPATPSAT_BIT
+	SLICE		1
+	PE		(1<<1)
+	RO		(1<<2)
+	COVERAGE	(1<<3)
+	UPSTREAM	(1<<4)
+	DOWNSTREAM	(1<<5)
+	SORS		(1<<6)
+End:
+
+VarField:	SVN_PLN_PRESAT_TYPE
+Common:		VFC_PRESAT_TYPE
+	SLICE		1
+	PE		2
+	RO		3
+	COVERAGE	4
+	UPSTREAM	5
+	DOWNSTREAM	6
+	FREEHAND	7
+	SORS		8
+	FH_TAG		10
+	HORIZON_TAG	11
+	VERTICAL_TAG	12
+	MRS_SELECTED	13
+	TAG_IR		14
+	CONTROL_IR	15
+	TEC		16
+	FREE_TAG_IR	17
+	FREE_CONTROL_IR	18
+	FREE_TEC	19
+	PROBE		20
+	TSLIT		21
+End:
+
+VarField:	SVN_PLN_VG_TYPE
+Common:		VFC_VG_TYPE
+	PARALLEL	1
+	RADIAL		2
+	DOUBLE_RADIAL	3
+End:
+
+VarField:	SVN_PLN_TYPE_DELAY_BETWEEN_REPS
+Common:		VFC_TYPE_DELAY_BETWEEN_REPS
+	SPECIFY	1
+	MANUAL	2
+End:
+
+VarField:	SVN_PLN_SCAN_ANATOMY
+Common:		VFC_ANATOMY
+	ABDOMEN 	1
+	CHEST 		2
+	PELVIS 		3
+	TL_SPINE 	4
+	SHOULDER	5
+	HEAD		6
+	C_SPINE		7
+	EXTRA		8
+	EXTREMITY	8
+	HAND		9
+	ANKLE		10
+End:
+
+VarField:	SVN_PLN_IS_ACQ_FORWARD
+Common:		VFC_ACQ_ORDER
+	BACKWARD  0
+	FORWARD   1
+	CENTRIC   2
+End:
+
+VarField:	SVN_PLN_INTERL_FLAG
+Common:		VFC_INTRL
+	NONE          0
+	ALTERNATE     1
+	COVERAGE      2
+End:
+
+VarField:	SVN_PLN_AFI_MODE
+Common:		VFC_AFI
+	PE_HEAD		1
+	PE_TAIL		2
+	RO_HEAD		4
+	RO_TAIL 	8
+	SE_HEAD 	16
+	SE_TAIL 	32
+End:
+
+VarField:	SVN_PLN_AFI_DIRECTION
+Common:		VFC_AFI
+	PE		0x03
+	RO		0x0C
+	SE		0x30
+End:
+
+VarField:	SVN_PLN_IR_PULSE
+Common:		VFC_IR_PULSE
+	NONE	0
+# Frequency Multiplexed Method (TAMI方式)
+	FMM	1
+# Time Multiplexed Method
+	STIR	2
+	FLAIR	3
+	IR2	4
+End:
+
+VarField:	SVN_PLN_INV_PULSE_TYPE
+Common:		VFC_INV_PULSE_TYPE
+	SINC		0
+	ADIABATIC	1
+	ASTAR		2
+	NOSELECT	3
+	ASTAR2		4
+	DOUBLEIRSTAR	5
+	SSATURATION	6
+End:
+
+VarField: 	SVN_PLN_NUM_EXCITATIONS
+Common:		VFC
+# Number of Excitations in the multiple excitation sequence.
+# At the time this was added, quad dissapears as an independent sequence.
+	DUO_SCAN_NUMBER_EXCIT		2
+	TRI_SCAN_NUMBER_EXCIT		3
+	QUAD_SCAN_NUMBER_EXCIT		4
+	APP_CODE_MULTI_EXCIT_FFE	8  Multiple Excitation Fast FE
+End:
+
+VarField:	SVN_PLN_VENC_DIR
+Common:		VFC_VENC_DIR
+	HEAD_FEET	0
+	ALL		1
+End:
+
+VarField:	SVN_PLN_SAR_ANATOMY
+Common:		VFC_SAR_ANATOMY
+	HEAD		1
+	ABDOMEN	        2
+	CHEST           3
+	CSPINE		4
+	TLSPINE		5
+	PELVIS		6
+	LOWER_EXT	7
+	UPPER_EXT	8
+	MISC		9
+End:
+
+VarField:	SVN_PLN_STATUS
+Common:		VFC_PLN_STATUS
+	PARENT		(1<<0)
+	PLAN2		(1<<1)
+	PROEDIT		(1<<8)
+	GLOC		(1<<9)
+	GATING		(1<<10)
+	DYNAMIC		(1<<11)
+	VGCOPY		(1<<12)
+	PROMUI		(1<<13)
+	SPCPLAN		(1<<14)
+	MOVINGBED	(1<<15)
+	DIFFUSION	(1<<16)
+	PERFUSION	(1<<17)
+	ASL		(1<<18)
+#	NAVI		(1<<19)
+	PROBE		(1<<19)
+	PROMON		(1<<24)
+	PRODEBUG	(1<<25)
+End:
+
+VarField:	SVN_PLN_ISCE_MODE
+Common:		VFC_ISCE_MODE
+	NORMAL		0
+	1_2		1
+	1_3		2
+End:
+
+VarField:	SVN_PLN_HOLD
+Common:		VFC_HOLD
+#  |<---  Pre Scan -------------->|<-Prep---->|<--- Scan ---------------->
+#  _______________________________________________________________________
+#  | Coil Tune | APC | CFA | RGN ∥Prep Scan ∥  Main Scan  |  SUB ......|
+#  ↑~~~~~~~~~~↑~~~~↑~~~~↑~~~~~↑~~~~~~~~~~↑~~~~~~~~~~~~~↑~~~~~
+#  PRE_SCAN    APC   CFA   RGN    MAIN_SCAN   COVERAGE       COVERAGE
+#                                 COVERAGE    (PREP)
+#				 
+# 定義
+#	  VFC_HOLD_PRE_SCAN	: 撮影処理の最初で止まる。（通常の撮影処理）
+#				  これがオフになっている時は自動撮影モード。
+#	  VFC_HOLD_MAIN_SCAN	: プレスキャン終了後、本スキャンの前で一時停止。
+#				”息止め撮影”用。
+#	  VFC_HOLD_COVERAGE	: カバレージごとに止まる。
+#	  VFC_HOLD_PREP		: プレップスキャンと本スキャンの間での停止を
+#	  			  意味する。通知用の情報であり制御には使用しない。
+#	  
+#	  VFC_HOLD_APC	:  ＡＰＣ直前で一時停止。”息止めＡＰＣ”用。
+#	  VFC_HOLD_CFA	:  ＣＦＡ直前で一時停止。
+#	  VFC_HOLD_RGN	:  ＲＧＮ直前で一時停止。
+#	  VFC_HOLD_CDS	:  ＣＤＳ直前で一時停止。
+#
+#	注）
+#	  VFC_HOLD_MAIN_SCAN か VFC_HOLD_COVERAGE のどちらかが指定されて
+#	いた場合、本スキャンの前で一時停止する。
+	PRE_SCAN	(1L<<0)
+	MAIN_SCAN	(1L<<1)
+	COVERAGE	(1L<<2)
+	PREP		(1L<<3)
+	MOVE_BED	(1L<<4)
+	APC		(1L<<16)
+	CFA		(1L<<17)
+	RGN		(1L<<18)
+	CDS		(1L<<19)
+End:
+
+VarField:	SVN_PLN_GRID_TAG
+Common:		VFC_GRID_TAG
+	HORIZON		(1L<<0)
+	VARTICAL	(1L<<1)
+End:
+
+VarField:	SVN_PLN_IMAGE_PATTERN
+Common:		VFC_IVIM_IMAGE
+	REF		0x0001
+	PE		0x0003
+	RO		0x0005	
+	SS		0x0009
+	PE_RO		0x0011
+	RO_SS		0x0041
+	SS_PE		0x0101
+	3_AXIS		0x000F
+	3_AXIS_PLUS	0x0151
+	3_AXIS_MINUS	0x02A1
+	TENSOR_PLUS	0x015F
+	TENSOR_MINUS	0x02AF
+	TENSOR		0x03F1
+End:
+
+VarField:	SVN_PLN_MRS_BASE_INFO
+Common:		VFC_MRS_BASE
+	LTL		0
+	LTR		1
+	LBL		2
+	LBR		3
+	RTL		4
+	RTR		5
+	RBL		6
+	RBR		7
+End:
+
+VarField:	SVN_PLN_SEGMENTATION_TYPE
+Common:		VFC_SEGMENT_TYPE
+	MOSAIC		0
+	INTERLEAVE	1
+	SLICE_CENTRIC	2
+	SEQUENTIAL	3
+	SWIRL		4
+	VIEWSHARING	5
+	ETL_T1		6
+	ETL_T2		7
+	EQUAL_PE	8
+	REVERSE_CENTRIC	9
+End:
+
+VarField:	SVN_PLN_PREC_PULSE
+Common:		VFC_PRECONTRAST_PULSE
+	NONE		0
+	DWI		1
+End:
+
+VarField:	SVN_PLN_MOVING_COUCH_FLG
+Common:		VFC_MOVING_COUCH
+	NONE		0
+	CONTINUOUSLY	1
+	MANUAL		2
+	AUTOMATIC	3
+End:
+
+VarField:	SVN_PLN_SPEEDER_FLAG
+Common:		VFC_SPEEDER_FLAG_BIT
+	PE	1
+	RO	(1<<1)
+	SE	(1<<2)
+End:
+
+VarField:	SVN_PLN_SPEEDER_TYPE
+Common:		VFC_SPEEDER_TYPE
+	NONE		0
+	SENSITIVITY	1
+	SPEEDER		2
+End:
+
+VarField:	SVN_PLN_SKIP_PREPULSE_CONTRAST
+Common:		VFC_SKIP_PREPULSE_CONTRAST
+	NORMAL	0
+	HEAVY	1
+	MIDDLE	2
+	LIGHT	3
+End:
+
+VarField:	SVN_PLN_PREP_IMAGE_TYPE
+Common:		VFC_PREP_IMAGE_TYPE
+	IMAGE	0
+	MIP		1
+End:
+
+VarField:	SVN_PLN_ACQ_SPLIT_MODE
+Common:		VFC_ACQ_SPLIT_MODE
+	AUTOPAUSE   1
+	MODE_PREP	2
+End:
+
+VarField:	SVN_PLN_AUTO_MOVINGBED_SUBTRACTION_IMAGES
+VarField:	SVN_PRC_AUTO_DYNAMIC_SUBTRACTION_IMAGES
+Common:		VFC_SUBTRACTION
+	NONE		(1<<0)	差分なし画像作成
+	ABSOLUTE	(1<<1)	絶対値差分画像作成
+	COMPLEX		(1<<2)	複素差分画像作成
+End:
+
+VarField:	SVN_PLN_PROEDIT_MODE
+Common:		VFC_PROEDIT_MODE
+	NORMAL		0
+	USER1		1
+	USER2		2
+End:
+
+VarField:	SVN_PLN_FATSAT_PULSE_TYPE
+Common:		VFC_FATSAT_PULSE_TYPE
+	STANDARD	0
+	ROBUST		1
+	LIGHT		2
+	DFS		3
+	TFS		4
+	SPAIR		5
+End:
+
+VarField:	SVN_PLN_ENCODE_ORDER
+Common:		VFC_ENCODE_ORDER
+	SEQUENTIAL	0
+	CENTRIC		1
+End:
+
+VarField:	SVN_PLN_PROBE_FLAG
+Common:		VFC_PROBE
+	NONE	0
+	RTMC	1	Real Time Motion Correction
+	RTMP	2	Real Time Motion Probing
+End:
+
+VarField:	SVN_PLN_FLUORO_MODE
+Common:		VFC_FLUORO
+	NONE	0
+	DIRECT	1	Direct Mode
+	SEQ_RM	2	Seqgen Mode
+End:
+
+VarField:	SVN_PLN_RETRO_MODE
+Common:		VFC_RETRO_MODE
+	MODE_NONE	0    
+	MODE_1		1         
+	MODE_2		2
+End:
+
+VarField:	SVN_PLN_AUTO_PROEDIT_FLAG
+Common:		VFC_AUTO_PROEDIT
+	NONE		0    
+	3DLOCATOR	1         
+End:
+
+VarField:	SVN_PLN_EPI_SORT_TYPE
+Common:		VFC_SORT_TYPE
+	NONE	0    
+	T1	1         
+	T2	2         
+End:
+
+VarField:	SVN_PLN_BBIR_PULSE
+Common:		VFC_BBIR_PULSE
+	NONE	0    
+	DOUBLE	1         
+	TSLIT	2         
+End:
+
+VarField:	SVN_PLN_NON_SELECTIVE_IR_PULSE
+Common:		VFC_NON_SELECTIVE_IR_PULSE
+	ON	0    
+	OFF	1         
+End:
+
+VarField:	SVN_PLN_ALTERNATED_ACQ_FLAG
+Common:		VFC_ALTERNATED_ACQ
+	NONE	0    
+	ON	1    
+        DLY2	2
+End:
+
+VarField:	SVN_PLN_FLOW_COMP
+Common:		VFC_FLOW_COMP
+	OFF	0    
+	RO	1    
+        PE	2
+        SS	4
+        RO_SS	5
+        3AXIS	7
+End:
+
+VarField:	SVN_PLN_AMB_MODE_FLG
+Common:		VFC_AMB_MODE
+	NONE	0
+	MASTER	1
+	SLAVE	2
+End:
+
+VarField:	SVN_PLN_FREQ_SUPPRESSION_PASTA
+Common:		VFC_SUPPRESSION
+	NONE	0
+	FAT	1
+	SI	2
+End:
+
+VarField:	SVN_PLN_SLICE_NUMBER_METHOD
+Common:		VFC_SLICE_NUMBER_METHOD
+	SLICES	0
+	SLAB	1
+End:
+
+VarField:	SVN_PLN_GATE_INTERVAL_SEGMENTATION_TYPE
+Common:		VFC_GATE_INTERVAL_SEGMENT_TYPE
+	SEQUENTIAL	1
+	REVERSE		2
+End:
+
+VarField:	SVN_PLN_PHASE_CORRECTION_PRESCAN_FLAG
+Common:		VFC_PHASE_CORRECTION_PRESCAN
+	OFF	0
+	ON	1
+End:
+
+VarField:	SVN_PLN_K_SPACE_TRAJECTORY_TYPE
+Common:		VFC_K_SPACE_TRAJECTORY_TYPE
+	NONE		0
+	2DJET		1
+	2DRADIAL	2
+	3DRADIAL	3
+	SPIRAL		4
+End:
+
+VarField:	SVN_PLN_SWITCH_COIL_TYPE
+Common:		VFC_SWITCH_COIL_TYPE
+	NONE	0
+	MAP	1
+End:
+
+VarField:	SVN_PLN_VARI_FLOP_FLAG
+Common:		VFC_VFA_FOR
+	NONE		0
+	2D		1
+	3DBRAIN_T2	2
+	3DBRAIN_PD	3
+	3DOTHER_T2	4
+	3DOTHER_PD	5
+End:
+
+VarField:	SVN_PLN_GATE_CTRL_TYPE
+Common:		VFC_GATE_CTRL_TYPE
+	BYRECON		0
+	BYPROLIM	1
+End:
+
+VarField:	SVN_PLN_SAR_CALC_MODE
+Common:		VFC_SAR_CALC_MODE
+	MODEL		0
+	SEQ		1
+End:
+
+VarField:	SVN_PLN_CDS_FLAG
+Common:		VFC_CDS_FLAG
+	OFF		0
+	ON		1
+End:
+
+VarField:	SVN_PLN_CDS_STATUS
+Common:		VFC_CDS_STATUS
+	AUTO_SELECT	0x0001
+	SCAN		0x0002
+	USE_PREVIOUS	0x0004
+End:
+
+#
+# SEQUENCE name subspace
+#
+
+VarField:	SVN_SEQ_ECHO_TYPE
+Common:		VFC_ECHO_TYPE
+	SPIN_ECHO		0	 Spin Echo
+	FIELD_ECHO	1	 Field Echo
+End:
+
+VarField:	SVN_SEQ_RFL_WAVE_FAMILY
+Common:		VFC_SEQ_WAVE_FAMILY
+	REGULAR		0
+End:
+
+VarField:	SVN_SEQ_RO_CHANNEL_POLARITY
+VarField:	SVN_SEQ_PE_CHANNEL_POLARITY
+VarField:	SVN_SEQ_ECHO_POLARITY
+VarField:	SVN_SEQ_PE_STEP_POLARITY
+VarField:	SVN_SEQ_READ_POLARITY
+Common:		VFC_POLARITY
+	POSITIVE	  1
+	NEGATIVE	(-1)
+End:
+
+VarField:	SVN_SEQ_DATA_ALTERNATION
+Common:		VFC_SEQ_DATA_ALTERNATION
+	NONE	0
+	POS	1	  1 -1  1 -1 ...
+	NEG	(-1)	 -1  1 -1  1 ...
+End:
+
+VarField:	SVN_SEQ_RF_GRADS_OFF_FLAGS
+Common:		VFC_SEQ
+	RF_OFF		1
+	SL_CHANNEL_OFF	(1<<1)
+	PE_CHANNEL_OFF	(1<<2)
+	RO_CHANNEL_OFF	(1<<3)
+End:
+
+VarField:	SVN_SEQ_SHIM_FLAG
+Common:		VFC_SHIM
+	NONE			0
+	STANDARD		1
+	HIGH_RESOLUTION		2
+End:
+
+VarField:	SVN_SEQ_SHIM_FSY_FLAG
+Common:		VFC_SHIM_FSY
+	WATER	0
+	FAT	1
+End:
+
+VarField:	SVN_SEQ_LOOP_ORDER
+Common:		VFC_LOOP
+	PE_SE		1	(PE->SE)
+	SE_PE		2	(SE->PE)
+End:
+
+VarField:	SVN_SEQ_DBDT_MODE
+Common:		VFC_DBDT
+	NORMAL		0
+	CONTROLLED1	1
+	CONTROLLED2	2
+	HIGH1		3
+	HIGH2		4
+	HIGH1_CONTROLLED1		5
+	HIGH1_CONTROLLED2		6
+	HIGH2_CONTROLLED1		7
+	HIGH2_CONTROLLED2		8
+End:
+
+VarField:	SVN_SEQ_DBDT_IEC_OPERATING_MODE
+Common:		VFC_DBDT_IEC_OPERATING
+	NORMAL		0
+	1ST_CONTROLLED	1
+	2ND_CONTROLLED	2
+	OVER_CARDIAC_THRESHOLD  3
+End:
+
+VarField:	SVN_SEQ_RAMP_SAMPL_METHOD
+Common:		VFC_RAMP_SAMPL
+	NONE              0
+	VARIABLE_ADC      1
+	CONSTANT_ADC_RES  2
+	CONSTANT_ADC_SN   4
+End:
+
+VarField:	SVN_SEQ_DBDT_IEC_EDITION
+Common:		VFC_DBDT_IEC_EDITION
+	1995              1
+	2002              2
+End:
+
+VarField:	SVN_SEQ_PHASE_CORRECTION_PRESCAN_METHOD
+Common:		VFC_PHASE_CORRECTION_PRESCAN
+	FSE_THREE_ECHO_MODE	0
+	FSE_FIVE_ECHO_MODE	1
+End:
+
+
+#
+#  EXECUTION name subspace
+#
+
+VarField:	SVN_EXE_PRESCAN_FSY_ACTION
+VarField:	SVN_EXE_PRESCAN_RFL_ACTION
+VarField:	SVN_EXE_PRESCAN_RGN_ACTION
+Common:		VFC_PRESCAN
+	CLINICAL		0
+	USE_PREVIOUS		1
+	USE_VARFIELD		2
+	GAIN_MEASURE		0
+	GAIN_CALCULATE		3
+	LOAD_VARFIELD		4
+End:
+
+VarField:	SVN_EXE_PROTOCOL_ACQ_STATUS
+Common:		VFC_ACQ_STATUS
+	WAIT		0
+	SUCCESS		1
+	FAIL		2
+	CURRENT		3
+End:
+
+VarField:	SVN_EXE_VERBOSITY
+Common:		VFC_VERBOSITY
+# The last two (VFC_PRESCAN_GAIN_MEASURE, VFC_PRESCAN_GAIN_CALCULATE)
+# have been added to more easily distinguish between two methods of
+# determining a good receiver gain value for imaging.
+#
+# Please notice that VFC_PRESCAN_GAIN_MEASURE is defined to be the
+# same as VFC_PRESCAN_CLINICAL. This re-definition is intentional.
+# The purpose is backward-compatibility.
+	CLINICAL	0
+	VERBOSE		1
+	CONFIGURED	2
+End:
+
+VarField:	SVN_EXE_PHASE_CORRECTION_PRESCAN_STATUS
+Common:		VFC_PHASE_CORRECTION_PRESCAN
+	NONE	0
+	OK		1
+	USE_DEFAULT				2
+	RETRY_DUE_TO_OVERFLOW	3
+	RETRY_IN_ALGORITHM		4
+	FAILED	5
+End:
+
+VarField:	SVN_EXE_MOVE_COUCH_METHOD
+VarField:	SVN_PLN_MOVE_COUCH_METHOD_FLAG
+Common:		VFC_MOVE_COUCH_METHOD
+	NONE			-1
+	PLAN_CENTER_POSI	0
+	PARENT_POSI		1
+End:
+
+VarField:	SVN_EXE_PRESCAN_MRS_F0_ACTION
+VarField:	SVN_EXE_PRESCAN_MRS_REF_ACTION
+VarField:	SVN_EXE_PRESCAN_MRS_WSAT_ACTION
+Common:		VFC_PRESCAN_MRS
+	SKIP	0
+	EXE	1
+End:
+
+VarField:	SVN_EXE_PRESCAN_RFL_SLICE_ORI
+Common:		VFC_RFL_SLICE_ORI
+	SG	1
+	CO	2
+	AX	3
+End:
+
+#
+# PROCESS name subspace
+#
+
+VarField:	SVN_PRC_DATA_KIND
+Common:		VFC_PROC
+	RECON 	      		0
+	INTERMEDIATE 		1
+	TEMPORARY		2	中間データ
+	MERGE_POSITION		13
+	MRA_ALONG		20
+	MRA_ACROSS		21
+	MRA_ROI			22
+	PCMRA_VEL		40
+	PCMRA_SPEED		41
+	SPIKE_FILTER		70
+	BEST_FILTER		71
+	MRS			80
+	IMCALC_AVR		100
+	RAVE_FILTER		110
+	SHIM_CALC		200	 磁場分布測定画像
+	SHIM_ADJUST		201	 磁場分布調整画像
+End:
+
+VarField:	SVN_PRC_ECHO_CODE
+Common:		VFC_ECHO
+	RECON			0
+	SYNTH			1
+End:
+
+VarField:	SVN_PRC_T2_CORR_METHOD
+Common:		VFC
+	T2_CORR_NONE			0
+	T2_CORR_FOR_T2W			1
+	T2_CORR_FOR_T1W			2
+	T2_CORR_FOR_PD			3
+	T2_CORR_FOR_EPI_2SHOT_METHOD	4
+	T2_CORR_FOR_EPI_ECHO_BY_ECHO	5
+	T2_CORR_FOR_EPI_CENTER		6
+	GLBL_T2_CORR_TEMP		17
+	GLBL_T2_CORR_ESTM		33
+End:
+
+VarField:	SVN_PRC_PHASE_CORR_METHOD
+Common:		VFC_PHASE_CORR
+	NONE			0
+	FULL			1	 Phase Rotation Full
+	CENTER			2	 Phase Rotation Center
+	TIME			3	 Time Domain
+	ONE_SHOT_METHOD		16	 位相補正1ショットモード
+	ZERO_SHOT_METHOD	32	 位相補正0ショットモード
+	TWO_SHOTS_METHOD	64	 位相補正2ショットモード
+# SFT-tool(SE/STE調整用）画像傾き出力
+	FOR_SFT_P_TUNE		128
+# SFT-tool(磁場遅れ調整用）２ショット位相補正量出力
+	FOR_SFT_D_TUNE		256
+End:
+
+VarField:	SVN_PRC_PE_SORT_METHOD
+VarField:	SVN_PRC_SE_SORT_METHOD
+Common:		VFC_SORT
+	NONE			0
+	FREE			1
+	CENTRIC			2
+End:
+
+VarField:	SVN_PRC_VIEW_SORT_METHOD
+Common:		VFC_VIEW
+	NONE	0	なにもしない
+	FREE	1	VIEW_SORT_TABLEを使用する
+End:
+
+VarField:	SVN_PRC_PE_SRTTBL
+VarField:	SVN_PRC_SE_SRTTBL
+Common:		VFC_SRTTBL_ATTRB
+	NONE		0
+	TEMPLATE	1
+	ZEROFILL	2
+	CUTOUT		3
+	CONJUGATE	4
+	TEMPLATENAVI	5
+	NOISE		6
+	REVERSE		8
+End:
+
+VarField:	SVN_PRC_BARIQ_MODE
+Common:		VFC_BARIQ
+	NONE		0
+	ON		1
+End:
+
+VarField:	SVN_PRC_WIENER_CORR_METHOD
+Common:		VFC_WIENER
+	CORR_NONE	0x0000
+	CORR_ON		0x0001
+	SE_TEMPLATE	0x0010
+	SE_ESTIMATE	0x0020
+	SE_STEP		0x0030
+	PE_TEMPLATE	0x0100
+	PE_ESTIMATE	0x0200
+	PE_STEP		0x0300
+	RO_TEMPLATE	0x1000
+	RO_ESTIMATE	0x2000
+	RO_STEP		0x3000
+End:
+
+VarField:	SVN_PRC_PS_RECON_IMAGE
+Common:		VFC_PS_RECON
+	SPEED_PE	0x0001
+	SPEED_RO	0x0002
+	SPEED_SE	0x0004
+	FLOW_PE		0x0010
+	FLOW_RO		0x0020
+	FLOW_SE		0x0040
+	VESSEL		0x0100
+	PROTON		0x1000
+End:
+
+#VarField:	SVN_PRC_PS_IMAGE_KIND
+Common:	VFC_PS_RECON
+	SPEED_IMAGE	1
+	FLOW_IMAGE	2
+	VESSEL_IMAGE	3
+
+VarField:	SVN_PRC_PS_COMBINATION
+Common:		VFC_PS_COMB
+	NONE		0
+	ADD		1
+	SUB		2
+End:
+
+Macro:	VFC_PS_COMB(n,t)		(t<<2*(n-1))
+
+VarField:	SVN_PRC_AUTO_PERFUSION_MAPPING
+Common:		VFC_PERFUSION
+	PH		(1L<<0)		Peak Height
+	PT		(1L<<1)		Peak Time
+	AT		(1L<<2)		Appearance Time
+	DT		(1L<<3)		Disappearance Time
+	AC		(1L<<4)		Area Under Curve (rCBV相当)
+	rMT1		(1L<<5)		relative Mean Transit Time
+	MT2		(1L<<6)		2'nd Moment
+	TT		(1L<<7)		Transit Time
+	rFlow		(1L<<8)		relative Flow（rCBF相当）
+	US		(1L<<9)		Up Slope
+	DS		(1L<<10)	Down Slope
+	PTe		(1L<<11)	effective Peak Time
+	rMT1e		(1L<<12)	effective Mean Transit Time
+	rFlowe		(1L<<13)	effective relative Flow
+	LSQerror	(1L<<14)	LSQ error
+End:
+
+VarField:	SVN_PRC_RECON_ENGINE
+Common:		VFC_RECON
+	HOST		0
+	RACE		1
+	VAP		2
+End:
+
+VarField:	SVN_PRC_RECON_AVERAGE_METHOD
+Common:		VFC_RECON_AVERAGE
+	NONE		0	再構成側でのアベレージングなし
+	DIFFUSION	1	diffusion撮影で使用
+	FISP_CISS	2	FISP撮影のCISSモードで使用
+	FISP_SIMCAST	3	FISP撮影のSIMCASTモードで使用
+End:
+
+VarField:	SVN_PRC_AUTO_DIFFUSION_ALIGNMENT_MODE
+Common:		VFC_DIFFUSION_ALIGNMENT
+	REFER           (1L<<0)
+	CALC            (1L<<1)
+	CALC_SAVE       (1L<<2)
+End:
+
+VarField:	SVN_PRC_AUTO_DIFFUSION_MAPPING
+Common:		VFC_DIFFUSION
+	FA           (1L<<0)
+	L1           (1L<<1)
+	L2           (1L<<2)
+	L3           (1L<<3)
+	V1X          (1L<<4)
+	V1Y          (1L<<5)
+	V1Z          (1L<<6)
+End:
+
+VarField:	SVN_PRC_INTENSITY_MAP_TYPE
+Common:		VFC_INTENSITY_MAP_TYPE
+	NONE         0     
+	INTENSITY    (1<<0)
+	SPEEDER      (1<<1)
+End:
+
+VarField:	SVN_PRC_INTENSITY_CORR_FLAG
+Common:		VFC_INTENSITY_CORR
+	OFF	0
+	ON	1
+End:
+
+VarField:	SVN_PRC_PAC_CORRECT_ACTION 
+Common:		VFC_PAC
+	PHASE_CORRECT  1     
+	GAIN_CORRECT   (1<<1)
+End:
+
+VarField:	SVN_PRC_DIRECT_QUEUE
+Common:		VFC_SET
+	NORMAL_QUEUE	0
+	DIRECT_QUEUE	1
+End:
+
+VarField:	SVN_PRC_RECON_START_AFTER_REFVIEW
+Common:		VFC_AFTER_REFVIEW
+	AUTO	0
+	MANUAL	1
+End:
+
+VarField:	SVN_PRC_NOISE_GAIN_TABLE_FLAG
+Common:		VFC_NOISE_GAIN_TABLE
+	OFF		0
+	ON		1
+End:
+
+VarField:	SVN_PRC_NOISE_MATRIX_TABLE_FLAG
+Common:		VFC_NOISE_MATRIX_TABLE
+	OFF		0
+	ON		1
+End:
+
+VarField:	SVN_PRC_MOTION_CORR_FLAG_FOR_JET
+Common:		VFC_MOTION_CORR_FLAG_FOR_JET
+	ROTATION	0
+	TRANSLATION	(1L<<1)
+	REJECTION	(1L<<2)
+End:
+
+VarField:	SVN_PRC_MOTION_CORR_OPT_METHOD_FOR_JET
+Common:		VFC_MOTION_CORR_OPT_METHOD_FOR_JET
+	NONE	0
+End:
+
+VarField:	SVN_PRC_REGRIDDING_METHOD_FOR_JET
+Common:		VFC_REGRIDDING_METHOD_FOR_JET
+	NONE			0
+	JACKSON			1
+	JACKSON_DECONV	2
+	ENEN			3
+	ENEN_DECONV		4
+End:
+
+VarField:	SVN_PRC_K_SPACE_TRAJECTORY_SORT_METHOD
+Common:		VFC_K_SPACE_TRAJECTORY_SORT_METHOD
+	NONE			0
+	USE_DEFAULT		1
+	SORT_FREE		2
+End:
+
+VarField:	SVN_PRC_DC_CORR_METHOD_FOR_JET
+Common:		VFC_DC_CORR_METHOD_FOR_JET
+	NONE			0
+End:
+
+VarField:	SVN_PRC_DUAL_ECHO_COMBINING_TYPE
+Common:		VFC_DUAL_ECHO_COMBINING
+	NONE			0
+	ABS_ADD			1
+	ABS_SUB1		2
+	ABS_SUB2		3
+	FWS_WEAK		4
+	FWS_MEDIUM		5
+	FWS_STRONG		6
+End:
+
+VarField:	SVN_PRC_DUAL_ECHO_DISPLAY_FLAG
+Common:		VFC_DUAL_ECHO
+	HIDE			0
+	SHOW			1
+End:
+
+VarField:	SVN_PRC_AFI_ALGORITHM
+Common:		VFC_AFI_ALGORITHM
+	MARGOSIAN		0
+	POCS			1
+	FIR			2
+	FIR_POCS		3
+	MOFIR			4
+	MOFIR_POCS		5
+	HYBRID			8
+	POCS_HYBRID		9
+	FIR_HYBRID		10
+	FIR_POCS_HYBRID		11
+	MOFIR_HYBRID		12
+	MOFIR_POCS_HYBRID	13
+End:
+
+VarField:	SVN_PRC_AUTO_STAMD_MODE
+Common:		VFC_AUTO_STAMD
+	MINIP			0
+	MIP			1
+End:
+
+#
+# PRESENT name subspace
+#
+
+#
+# DICOM name subspace
+#
+VarField:	SVN_DCM_PPS_STATUS
+Common: VFC_MPPS
+	NONE		1
+	START		2
+	STOP		3
+	DONE		4
+	ERROR		5
+End:

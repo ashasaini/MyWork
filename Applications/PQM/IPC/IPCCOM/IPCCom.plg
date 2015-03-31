@@ -1,0 +1,117 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: IPCCom - Win32 Unicode Release MinDependency--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "midl.exe /tlb ".\IPCCom.tlb" /h "IPCCom.h" /iid "IPCCom_i.c" /Oicf "C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl""
+Creating command line "rc.exe /l 0x409 /fo"ReleaseUMinDependency/IPCCom.res" /d "NDEBUG" /d "_AFXDLL" "C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.rc"" 
+Creating temporary file "C:\DOCUME~1\GPOPER~1\LOCALS~1\Temp\RSP16D.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /Od /I "..\IPCLIB" /I "C:\MRMPlus\Include" /I "C:\MPlusPlatform\Include" /I "C:\MRMPlus\Sources\Acquire" /D "__INTTYPES_H__" /D "_MSXMLPARSER" /D "NDEBUG" /D "_UNICODE" /D "_ATL_STATIC_REGISTRY" /D "WIN32" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "__NUTC__" /D "__WIN_NATIVE_PORTING__" /D "__WNP_SIGNAL__" /D "MRI" /D "IRIX65" /D "__WNP_PATNI__" /D "PQM_MODE" /D "_SDE_WIN32_" /D "_AFXEXT" /D "__WNP_MPLUS__" /Fr"ReleaseUMinDependency/" /Fo"ReleaseUMinDependency/" /Fd"ReleaseUMinDependency/" /FD /EHa /c 
+"C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.cpp"
+"C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\PqmIpcCom.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\GPOPER~1\LOCALS~1\Temp\RSP16D.tmp" 
+Creating temporary file "C:\DOCUME~1\GPOPER~1\LOCALS~1\Temp\RSP16E.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /Od /I "..\IPCLIB" /I "C:\MRMPlus\Include" /I "C:\MPlusPlatform\Include" /I "C:\MRMPlus\Sources\Acquire" /D "__INTTYPES_H__" /D "_MSXMLPARSER" /D "NDEBUG" /D "_UNICODE" /D "_ATL_STATIC_REGISTRY" /D "WIN32" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "__NUTC__" /D "__WIN_NATIVE_PORTING__" /D "__WNP_SIGNAL__" /D "MRI" /D "IRIX65" /D "__WNP_PATNI__" /D "PQM_MODE" /D "_SDE_WIN32_" /D "_AFXEXT" /D "__WNP_MPLUS__" /Fr"ReleaseUMinDependency/" /Fp"ReleaseUMinDependency/IPCCom.pch" /Yc"stdafx.h" /Fo"ReleaseUMinDependency/" /Fd"ReleaseUMinDependency/" /FD /EHa /c 
+"C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\GPOPER~1\LOCALS~1\Temp\RSP16E.tmp" 
+Creating temporary file "C:\DOCUME~1\GPOPER~1\LOCALS~1\Temp\RSP16F.tmp" with contents
+[
+libSMMutex.lib libSMLog.lib PDataTypesU.lib PDataParserU.lib Pcommlib.lib PASCOM.lib MPlusConfig.lib MPlusErrorHandler.lib MplusEventLog.lib MPlusErrorDisplay.lib MPlusDBServerIFClasses.lib MPlusDBServerVRLib.lib DBSAReadTemp.lib DBSAVR.lib DBSALib.lib DBSAAccessLog.lib MRTraceLogLibrary.lib MRErrorLogLibrary.lib MROpeLogLibrary.lib PQMIPC.lib libSar.lib DBSAVRMakeDB.lib MPlusI18nCatalog.lib Mpluscomm.lib libRemote.lib MplusAuditClient.lib MplusUserManageClient.lib wsock32.lib advapi32.lib winmm.lib Ws2_32.lib VF.lib libIrs.lib libdll.lib libwellks.lib libTl.lib LibVfToUI.lib libproMsg.lib libpl.lib shlwapi.lib pdet.lib libmsintf.lib libmsipc.lib libWNP.lib psapi.lib libgpdb.lib liblicense2.lib libinit.lib libseq.lib gdbm.lib libms.lib libmsVf.lib libmsVf1.lib libmsVf2.lib libmsVf3.lib libmathServer.lib libUIError.lib probe.lib libAcq.lib libdbdt.lib libsg.lib libgt.lib libSpeeder.lib librbvap.lib libVAPcom.lib libgv.lib libdbg.lib libplTree.lib librb.lib VoiceMgr.lib PErrorHandler.lib dbghelp.lib libMRSUtil.lib /nologo /base:"0x66000000" /subsystem:windows /dll /incremental:yes /pdb:"ReleaseUMinDependency/IPCCom.pdb" /map:"ReleaseUMinDependency/IPCCom.map" /debug /machine:I386 /nodefaultlib:"LIBCMT.lib" /def:".\IPCCom.def" /out:"ReleaseUMinDependency/IPCCom.dll" /implib:"ReleaseUMinDependency/IPCCom.lib" /libpath:"C:\MPlusPlatform\lib\Release" /libpath:"C:\MRMPlus\Lib\Release" /MAPINFO:LINES /MAPINFO:EXPORTS 
+.\ReleaseUMinDependency\IPCCom.obj
+.\ReleaseUMinDependency\PqmIpcCom.obj
+.\ReleaseUMinDependency\StdAfx.obj
+.\ReleaseUMinDependency\IPCCom.res
+]
+Creating command line "link.exe @C:\DOCUME~1\GPOPER~1\LOCALS~1\Temp\RSP16F.tmp"
+<h3>Output Window</h3>
+Creating Type Library...
+Microsoft (R) MIDL Compiler Version 5.01.0164  
+Copyright (c) Microsoft Corp 1991-1997. All rights reserved.
+Processing C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl
+IPCCom.idl
+Processing C:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\oaidl.idl
+oaidl.idl
+Processing C:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\objidl.idl
+objidl.idl
+Processing C:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\unknwn.idl
+unknwn.idl
+Processing C:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\wtypes.idl
+wtypes.idl
+Processing C:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\basetsd.h
+basetsd.h
+Processing C:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\guiddef.h
+guiddef.h
+Processing C:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\ocidl.idl
+ocidl.idl
+Processing C:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\oleidl.idl
+oleidl.idl
+Processing C:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\servprov.idl
+servprov.idl
+Processing C:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\urlmon.idl
+urlmon.idl
+Processing C:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\msxml.idl
+msxml.idl
+Processing C:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\oaidl.acf
+oaidl.acf
+Processing C:\PROGRAM FILES\MICROSOFT SDK\INCLUDE\ocidl.acf
+ocidl.acf
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(54) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'domain_name' of Procedure 'WriteTraceLog' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(54) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'func_name' of Procedure 'WriteTraceLog' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(54) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'log_text' of Procedure 'WriteTraceLog' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(87) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'f_pdata' of Procedure 'GetManualPreScanDefaultData' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(88) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter of Procedure 'GetMRSDefaultValue' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(104) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'pData' of Procedure 'GetScanAnatomy' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(113) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'coilnamefrom' of Procedure 'GetCoilNameFromAcqOrder' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(132) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'pdata' of Procedure 'GetCurrentSarInfoToDisplay' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(148) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'coilnamefrom' of Procedure 'GetCoilNameFromTransmiter' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(149) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'coilnamefrom' of Procedure 'GetCoilNameFromReceiver' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(157) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'f_scanoffset' of Procedure 'GetPatientScanoffset' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(162) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'f_data' of Procedure 'ReadPlanDuplicateSettings' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(174) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'f_data' of Procedure 'GetMagneticCenterPos' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(175) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'f_compass_debug_param' of Procedure 'GetCDSDebugParam' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(176) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'f_cdscompasssetting_param' of Procedure 'SetASCOMPASSParameter' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(177) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'f_cdscompasssetting_param' of Procedure 'GetASCOMPASSParameter' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(180) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'f_compass_debug_param' of Procedure 'CDSDebugClosed' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(193) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'pData' of Procedure 'GetSFTMenuXMLData' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(194) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'f_param' of Procedure 'GetSFTParamValue' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(195) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'pData' of Procedure 'GetToolMenuXMLData' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(197) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'pData' of Procedure 'GetPresetItem' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(198) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'pData' of Procedure 'GetScanCommentXMLData' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(253) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'f_wireless_param' of Procedure 'SetWirelessParamtoProt' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(273) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'f_arr_items' of Procedure 'GetAMBAutoScanItems' ( Interface 'IPqmIpcCom' ) ]
+C:\MRMPlus\sources\Acquire\PQM_AN\IPC\IPCCOM\IPCCom.idl(31) : warning MIDL2362 : too many methods in the interface, requires Windows NT 4.0 SP3 or greater : [ Interface 'IPqmIpcCom'  ]
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+IPCCom.cpp
+PqmIpcCom.cpp
+Generating Code...
+Linking...
+   Creating library ReleaseUMinDependency/IPCCom.lib and object ReleaseUMinDependency/IPCCom.exp
+Creating temporary file "C:\DOCUME~1\GPOPER~1\LOCALS~1\Temp\RSP182.bat" with contents
+[
+@echo off
+move ReleaseUMinDependency\IPCCom.dll C:\MRMPlus\Bin\Release
+move ReleaseUMinDependency\IPCCom.lib C:\MRMPlus\Lib\Release
+move IPCCom.h C:\MRMPlus\Include\PQM
+move IPCCom.tlb C:\MRMPlus\Include\PQM
+move ReleaseUMinDependency\IPCCom.map C:\MRMPlus\Lib\Release
+]
+Creating command line "C:\DOCUME~1\GPOPER~1\LOCALS~1\Temp\RSP182.bat"
+
+
+
+
+<h3>Results</h3>
+IPCCom.dll - 0 error(s), 25 warning(s)
+</pre>
+</body>
+</html>

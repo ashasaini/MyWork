@@ -1,0 +1,729 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\EPI.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_EPIFORMVIEW_TMPL    ICON    DISCARDABLE     "sdi.ico"
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\EPI.ico"
+IDR_EPITYPE             ICON    DISCARDABLE     "res\\EPIDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDR_IMAGER_TOOLBAR      BITMAP  DISCARDABLE     "res\\toolbar1.bmp"
+IDR_SLIDER_BAR          BITMAP  DISCARDABLE     "res\\slider_b.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  26, 17
+BEGIN
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_BUTTON_OPENIMAGE
+    BUTTON      ID_BUTTON_REFRESH
+    BUTTON      ID_BUTTON_OPEN_RAW
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_IMAGER_TOOLBAR TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_BUTTON_1x1
+    BUTTON      ID_BUTTON_1x2
+    BUTTON      ID_BUTTON_2x2
+    BUTTON      ID_BUTTON_FITIMAGE
+    BUTTON      ID_BUTTON_RESETIMAGE
+END
+
+IDR_SLIDER_BAR TOOLBAR DISCARDABLE  19, 15
+BEGIN
+    BUTTON      ID_DUMMY1
+    BUTTON      ID_DUMMY2
+    BUTTON      ID_DUMMY3
+    BUTTON      ID_DUMMY4
+    BUTTON      ID_DUMMY5
+    BUTTON      ID_DUMMY6
+    BUTTON      ID_DUMMY7
+    BUTTON      ID_DUMMY8
+    BUTTON      ID_DUMMY9
+    BUTTON      ID_DUMMY10
+    BUTTON      ID_DUMMY11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM "S&plit",                      ID_WINDOW_SPLIT
+        MENUITEM "&Imager",                     ID_VIEW_IMAGER
+        MENUITEM "&WW/WL",                      ID_VIEW_WWWL
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About EPI...",               ID_APP_ABOUT
+    END
+END
+
+IDR_EPIFORMVIEW_TMPL MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit", GRAYED
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM "&ImagerToolbar",              ID_VIEW_IMAGERTOOLS
+        MENUITEM "&WW/WL Toolbar",              32816
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About sd12...",              ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About EPI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "EPI Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2013",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_FORM_IMAGE_VIEWER DIALOG DISCARDABLE  0, 0, 669, 494
+STYLE DS_MODALFRAME | DS_CONTROL | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDC_STATIC_CONTROL1,13,9,314,234,NOT WS_VISIBLE
+    LTEXT           "",IDC_STATIC_CONTROL2,337,9,314,234,NOT WS_VISIBLE
+    LTEXT           "",IDC_STATIC_CONTROL3,13,252,314,234,NOT WS_VISIBLE
+    LTEXT           "",IDC_STATIC_CONTROL4,337,252,314,234,NOT WS_VISIBLE
+END
+
+IDD_FORM_IMAGE_SELECT DIALOGEX 0, 0, 358, 130
+STYLE DS_MODALFRAME | WS_CHILD
+EXSTYLE WS_EX_STATICEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_LIST_RAW_DATA_PROTOCOL_LIST,"SysListView32",
+                    LVS_REPORT | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,
+                    7,14,99,103
+    LTEXT           "Data Form",IDC_STATIC_EPI_DATA_FORM,241,49,34,8
+    COMBOBOX        IDC_COMBO_EPI_DATA_FORM,241,64,93,99,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Channel",IDC_STATIC_EPI_CHANNEL,241,83,49,8
+    EDITTEXT        IDC_EDIT_EPI_SPIN,241,98,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_CHANNEL,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,283,98,11,14
+    LTEXT           "Select step",IDC_STATIC_STEP_SELECTION,241,15,36,8
+    COMBOBOX        IDC_COMBO_SELECT_STEP,241,30,93,222,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List2",IDC_LIST_IMAGE_DATA_PROTOCOL_LIST,"SysListView32",
+                    LVS_REPORT | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,
+                    112,14,115,103
+END
+
+IDD_PROPPAGE_EPI DIALOG DISCARDABLE  0, 0, 243, 570
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "EPI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List5",IDC_LIST_PROTOCOL,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | 
+                    WS_BORDER | WS_TABSTOP,61,33,122,74
+    PUSHBUTTON      "Separate Template && Kspace",
+                    IDC_BUTTON_SEPARATE_RAW_DATA,69,202,113,15
+    CONTROL         "T2",IDC_RADIO_T2,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    152,248,25,10
+    CONTROL         "T1",IDC_RADIO_T1,"Button",BS_AUTORADIOBUTTON,78,248,25,
+                    10
+    CONTROL         "Speeder",IDC_RADIO_SPEEDER,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED | WS_GROUP,49,144,43,10
+    CONTROL         "Non-Speeder",IDC_RADIO_NON_SPEEDER,"Button",
+                    BS_AUTORADIOBUTTON,140,143,58,10
+    PUSHBUTTON      "Separate Kspace (Even && Odd)",
+                    IDC_BUTTON_SEPAARTE_KSPACE,70,269,112,15
+    GROUPBOX        "Run XXX",IDC_STATIC_STUDY_FILE_NAME,51,15,149,106
+    GROUPBOX        "Process Selection",IDC_STATIC_PROCESS_SELECTION,31,128,
+                    190,57
+    CONTROL         "Manual Process",IDC_CHECK_PROCESS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,49,164,67,10
+    GROUPBOX        "",IDC_STATIC_KSPACE_SEPARATE,49,233,154,59
+    GROUPBOX        "Phase Correction Options",IDC_STATIC_PHASE_OPTIONS,6,
+                    305,231,117
+    CONTROL         "Shift Peak Method",IDC_CHECK_SHIFTPEAK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,17,326,75,10
+    CONTROL         "Phase Correction Method",IDC_CHECK_PC_METHOD,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,131,325,96,10
+    CONTROL         "Time Shift",IDC_RADIO_TIME_SHIFT,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,17,341,47,10
+    CONTROL         "Time Shift && Line Fit",IDC_RADIO_TS_LF,"Button",
+                    BS_AUTORADIOBUTTON,17,359,78,10
+    CONTROL         "Time Shift in freq domain",IDC_RADIO_TS_FREQ,"Button",
+                    BS_AUTORADIOBUTTON,17,377,93,10
+    GROUPBOX        "",IDC_STATIC_SHIFT_PEAK_OPTIONS,12,318,104,97
+    GROUPBOX        "",IDC_STATIC_PC_OPTIONS,126,318,104,97
+    CONTROL         "DFT ",IDC_RADIO_DFT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED | WS_GROUP,131,341,32,10
+    CONTROL         "Differential",IDC_RADIO_DIFFERENCE,"Button",
+                    BS_AUTORADIOBUTTON | WS_DISABLED,131,359,49,10
+    CONTROL         "All Phase Correction",IDC_RADIO_ALLPC,"Button",
+                    BS_AUTORADIOBUTTON | WS_DISABLED,131,377,79,10
+    CONTROL         "Relative Phase Correction",IDC_RADIO_RELATIVE_PC,"Button",
+                    BS_AUTORADIOBUTTON | WS_DISABLED,131,395,98,10
+    PUSHBUTTON      "Merge Data",IDC_BUTTON_MERGE_DATA,16,486,113,14
+    PUSHBUTTON      "Correct Phase",IDC_BUTTON_CORRECT_PHASE,69,432,113,14
+    GROUPBOX        "Merge",IDC_STATIC_RECON,5,451,231,58
+    COMBOBOX        IDC_COMBO_SELECT_STEP,142,462,82,77,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "Select Step",IDC_STATIC_STEP_SELECT,16,462,113,14,
+                    SS_CENTERIMAGE
+    PUSHBUTTON      "Reconstruction",IDC_BUTTON_RECON,69,530,113,14
+    EDITTEXT        IDC_EDITMERGE,142,487,82,14,ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_PROPPAGE_FSE DIALOGEX 0, 0, 235, 157
+STYLE DS_MODALFRAME | WS_CHILD | WS_DISABLED | WS_CAPTION
+EXSTYLE WS_EX_STATICEDGE
+CAPTION "FSE/FASE"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "FSE/FASE Procedures",IDC_STATIC,73,74,74,8
+END
+
+IDD_FORM_STATUS DIALOGEX 0, 0, 333, 94
+STYLE DS_MODALFRAME | WS_CHILD
+EXSTYLE WS_EX_STATICEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "X",IDC_BUTTON_CLOSE,8,8,21,14,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_STATUS,36,16,252,61,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER
+END
+
+IDD_DIALOG_IMAGELIST DIALOG DISCARDABLE  0, 0, 418, 94
+STYLE WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Image List"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LIST_IMAGE,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_NOLABELWRAP | LVS_AUTOARRANGE | 
+                    LVS_EDITLABELS | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,7,7,404,80
+END
+
+IDD_DIALOG_OPEN_RAW DIALOGEX 0, 0, 187, 135
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+CAPTION "Open Raw File"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,109,82,19
+    PUSHBUTTON      "EXIT",IDCANCEL,98,109,82,19
+    RTEXT           "Image Type:",IDC_STATIC_RAW_IMAGE_TYPE,7,8,82,19,
+                    SS_CENTERIMAGE
+    RTEXT           "Width:",IDC_STATIC_RAW_WIDHT,7,56,82,19,SS_CENTERIMAGE
+    RTEXT           "Height:",IDC_STATIC_RAW_HEIGHT,7,82,82,19,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_COMBO_RAW_TYPE,98,8,82,38,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_RAW_WIDHT,98,57,82,19,ES_AUTOHSCROLL | 
+                    ES_NUMBER,WS_EX_DLGMODALFRAME
+    EDITTEXT        IDC_EDIT_RAW_HEIGHT,98,81,82,19,ES_AUTOHSCROLL | 
+                    ES_NUMBER,WS_EX_DLGMODALFRAME
+    RTEXT           "Raw Form",IDC_STATIC_RAW_FORM,7,32,82,19,SS_CENTERIMAGE
+    COMBOBOX        IDC_COMBO_RAW_FORM,98,33,82,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "EPI MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "EPI\0"
+            VALUE "LegalCopyright", "Copyright (C) 2013\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "EPI.EXE\0"
+            VALUE "ProductName", "EPI Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_FORM_IMAGE_VIEWER, DIALOG
+    BEGIN
+        VERTGUIDE, 19
+        BOTTOMMARGIN, 491
+        HORZGUIDE, 8
+    END
+
+    IDD_FORM_IMAGE_SELECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 351
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 123
+    END
+
+    IDD_PROPPAGE_EPI, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 239
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 563
+    END
+
+    IDD_PROPPAGE_FSE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_FORM_STATUS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 326
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DIALOG_IMAGELIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 411
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DIALOG_OPEN_RAW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_FORM_IMAGE_SELECT DLGINIT
+BEGIN
+    IDC_COMBO_EPI_DATA_FORM, 0x403, 10, 0
+0x614d, 0x6e67, 0x7469, 0x6475, 0x0065, 
+    IDC_COMBO_EPI_DATA_FORM, 0x403, 6, 0
+0x6850, 0x7361, 0x0065, 
+    IDC_COMBO_EPI_DATA_FORM, 0x403, 5, 0
+0x6552, 0x6c61, "\000" 
+    IDC_COMBO_EPI_DATA_FORM, 0x403, 10, 0
+0x6d49, 0x6761, 0x6e69, 0x7261, 0x0079, 
+    0
+END
+
+IDD_DIALOG_OPEN_RAW DLGINIT
+BEGIN
+    IDC_COMBO_RAW_TYPE, 0x403, 6, 0
+0x6853, 0x726f, 0x0074, 
+    IDC_COMBO_RAW_TYPE, 0x403, 5, 0
+0x6f4c, 0x676e, "\000" 
+    IDC_COMBO_RAW_TYPE, 0x403, 6, 0
+0x6c46, 0x616f, 0x0074, 
+    IDC_COMBO_RAW_TYPE, 0x403, 7, 0
+0x6f44, 0x6275, 0x656c, "\000" 
+    IDC_COMBO_RAW_FORM, 0x403, 10, 0
+0x614d, 0x6e67, 0x7469, 0x6475, 0x0065, 
+    IDC_COMBO_RAW_FORM, 0x403, 6, 0
+0x6850, 0x7361, 0x0065, 
+    IDC_COMBO_RAW_FORM, 0x403, 5, 0
+0x6552, 0x6c61, "\000" 
+    IDC_COMBO_RAW_FORM, 0x403, 10, 0
+0x6d49, 0x6761, 0x6e69, 0x7261, 0x0079, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "EPI\n\nEPI\n\n\nEPI.Document\nEPI Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "EPI"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open the Study File"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save Current Selected Image"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_EPIFORMVIEW_TMPL    "EPIFormView\n\nEPIFor\nEPIFor Files (*.epi)\n.epi\nEPIFormView.Document\nEPIFor Document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_BUTTON_1x1           "IMAGER 1x1"
+    ID_BUTTON_1x2           "IMAGER 1x2"
+    ID_BUTTON_2x2           "IMAGER 2x2"
+    ID_BUTTON_RESETIMAGE    "RESET_IMAGE"
+    ID_BUTTON_FITIMAGE      "FIT_IMAGE"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_DUMMY1               "WW/WL "
+    ID_DUMMY2               "WW/WL"
+    ID_DUMMY3               "WW/WL"
+    ID_DUMMY4               "WW/WL"
+    ID_DUMMY5               "WW/WL"
+    ID_DUMMY6               "WW/WL"
+    ID_DUMMY7               "WW/WL"
+    ID_DUMMY8               "WW/WL"
+    ID_DUMMY9               "WW/WL"
+    ID_DUMMY10              "WW/WL"
+    ID_DUMMY11              "WW/WL"
+    ID_DUMMY12              "WW/WL"
+    ID_DUMMY13              "WW/WL"
+    ID_DUMMY14              "WW/WL"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_WWWLTOOLBAR     "Show or hide the status bar\nToggle WW/WL"
+    ID_VIEW_IMAGER          "Show or hide the status bar\nToggle Imager Bar"
+    ID_VIEW_WWWL            "Show or hide the status bar\nToggle WW/WL Bar"
+    ID_BUTTON_OPENIMAGE     "Open Image List"
+    ID_DIRECTORY_SELECT     "Select an initial directory for the CFileDialog\nSelect Directory"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_IMAGERTOOLS     "Show or hide the status bar\nToggle Imager"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_INITIAL_DIR "."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_BUTTON_REFRESH       "Refresh Study already Loaded!"
+    ID_BUTTON32836          "OPEN_RAW"
+    ID_BUTTON_OPEN_RAW      "Open Raw Data File"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\EPI.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

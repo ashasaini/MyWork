@@ -1,0 +1,30 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+HKEY_CLASSES_ROOT\.mplusdoc = PQM.Document
+HKEY_CLASSES_ROOT\PQM.Document\shell\open\command = PQM.EXE %1
+HKEY_CLASSES_ROOT\PQM.Document\shell\open\ddeexec = [open("%1")]
+HKEY_CLASSES_ROOT\PQM.Document\shell\open\ddeexec\application = PQM
+    ; note: the application is optional
+    ;  (it defaults to the app name in "command")
+
+HKEY_CLASSES_ROOT\PQM.Document = PQM Document
+HKEY_CLASSES_ROOT\PQM.Document\protocol\StdFileEditing\server = PQM.EXE
+HKEY_CLASSES_ROOT\PQM.Document\protocol\StdFileEditing\verb\0 = &Edit
+HKEY_CLASSES_ROOT\PQM.Document\Insertable =
+HKEY_CLASSES_ROOT\PQM.Document\CLSID = {FDA928AF-A627-4D5F-9C9F-2F3BDED4FAA6}
+
+HKEY_CLASSES_ROOT\CLSID\{FDA928AF-A627-4D5F-9C9F-2F3BDED4FAA6} = PQM Document
+HKEY_CLASSES_ROOT\CLSID\{FDA928AF-A627-4D5F-9C9F-2F3BDED4FAA6}\DefaultIcon = PQM.EXE,1
+HKEY_CLASSES_ROOT\CLSID\{FDA928AF-A627-4D5F-9C9F-2F3BDED4FAA6}\LocalServer32 = PQM.EXE
+HKEY_CLASSES_ROOT\CLSID\{FDA928AF-A627-4D5F-9C9F-2F3BDED4FAA6}\ProgId = PQM.Document
+HKEY_CLASSES_ROOT\CLSID\{FDA928AF-A627-4D5F-9C9F-2F3BDED4FAA6}\MiscStatus = 32
+HKEY_CLASSES_ROOT\CLSID\{FDA928AF-A627-4D5F-9C9F-2F3BDED4FAA6}\AuxUserType\3 = PQM
+HKEY_CLASSES_ROOT\CLSID\{FDA928AF-A627-4D5F-9C9F-2F3BDED4FAA6}\AuxUserType\2 = PQM
+HKEY_CLASSES_ROOT\CLSID\{FDA928AF-A627-4D5F-9C9F-2F3BDED4FAA6}\Insertable = 
+HKEY_CLASSES_ROOT\CLSID\{FDA928AF-A627-4D5F-9C9F-2F3BDED4FAA6}\verb\1 = &Open,0,2
+HKEY_CLASSES_ROOT\CLSID\{FDA928AF-A627-4D5F-9C9F-2F3BDED4FAA6}\verb\0 = &Edit,0,2
+HKEY_CLASSES_ROOT\CLSID\{FDA928AF-A627-4D5F-9C9F-2F3BDED4FAA6}\InprocHandler32 = ole32.dll

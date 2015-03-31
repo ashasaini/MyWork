@@ -1,0 +1,1 @@
+tami\imgsrv is taken from V2.20*0227 developement version

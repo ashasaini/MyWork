@@ -1,0 +1,283 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\PlanDuplicator.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\PlanDuplicator.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About PlanDuplicator"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "PlanDuplicator Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2010",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_PLANDUPLICATOR_DIALOG DIALOGEX 0, 0, 498, 453
+STYLE DS_MODALFRAME | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "PlanDuplicator"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Exit",IDCANCEL,378,427,113,21
+    LTEXT           "Updated Sequence",IDC_STATIC_UPDATED_SEQUENCE,13,337,
+                    126,9
+    EDITTEXT        IDC_EDIT_TEXTFILEPATH,14,85,312,19,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "Browse",IDC_BUTTON_BROWSE,378,80,113,21
+    PUSHBUTTON      "Get Data",IDC_BUTTON_GETDATA,378,112,113,21
+    PUSHBUTTON      "Update Sequence",IDC_BUTTON_UPDATESEQ,137,308,115,21
+    CONTROL         "Auto update",IDC_CHECK_AUTOUPDATE,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,366,321,56,
+                    12
+    CONTROL         "Dicom Axis",IDC_CHECK_DICOMAXIS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,112,126,12
+    PUSHBUTTON      "Convert",IDC_BUTTON_COVERT,378,16,113,21
+    PUSHBUTTON      "SmartMPR",IDC_BUTTON_SMARTMPR,378,48,113,21
+    CONTROL         "List1",IDC_LISTCTRL_DATA,"SysListView32",LVS_SINGLESEL | 
+                    LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,14,147,474,72
+    CONTROL         "List1",IDC_LIST_DICOMAXIS,"SysListView32",WS_BORDER,14,
+                    147,474,72
+    CONTROL         "List1",IDC_LISTCTRL_STATUS,"SysListView32",
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,14,351,256,53
+    LTEXT           "Vantage Axis",IDC_STATIC_VANTAGEAXIS,14,135,81,10
+    CONTROL         "List1",IDC_LISTCTRL_SCANNEDPROT,"SysListView32",
+                    LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,
+                    14,20,101,53
+    CONTROL         "List1",IDC_LIST_UNSCANNEDPROT,"SysListView32",
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,14,241,126,53
+    PUSHBUTTON      "Calculate",IDC_BUTTON_CALCULATE2,14,308,115,21
+    CONTROL         "Auto Couch",IDC_RADIO_AUTO_COUCH,"Button",
+                    BS_AUTORADIOBUTTON | BS_LEFT | WS_GROUP,161,246,67,10
+    CONTROL         "Auto Plan",IDC_RADIO_AUTO_PLAN,"Button",
+                    BS_AUTORADIOBUTTON | BS_LEFT,161,264,67,10
+    CONTROL         "Manual",IDC_RADIO_MANUAL,"Button",BS_AUTORADIOBUTTON | 
+                    BS_LEFT,161,280,67,10
+    CONTROL         "Axial",IDC_RADIO_AXIAL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,267,246,65,10
+    CONTROL         "Coronal",IDC_RADIO_CORONAL,"Button",BS_AUTORADIOBUTTON,
+                    267,263,65,10
+    CONTROL         "Sagittal",IDC_RADIO_SAGITTAL,"Button",
+                    BS_AUTORADIOBUTTON,267,280,65,10
+    CONTROL         "Slice Number",IDC_RADIO_SLICE_NUMBER,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,367,247,81,10
+    CONTROL         "Slice Gap",IDC_RADIO_SLICE_GAP,"Button",
+                    BS_AUTORADIOBUTTON,367,264,81,10
+    CONTROL         "Slice Thickness",IDC_RADIO_SLICE_THICKNESS,"Button",
+                    BS_AUTORADIOBUTTON,367,281,81,10
+    GROUPBOX        "Parameter",IDC_STATIC_PARAMETER,361,231,91,68,BS_CENTER
+    GROUPBOX        "Axis",IDC_STATIC_AXIS,259,231,83,68,BS_CENTER
+    CONTROL         "Smart MPR",IDC_RADIO_SMART_MPR,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,137,22,60,10
+    CONTROL         "Smart VOI",IDC_RADIO_SMART_VOI,"Button",
+                    BS_AUTORADIOBUTTON,209,22,67,10
+    GROUPBOX        "Mode",IDC_STATIC_MODE,156,231,85,68,BS_CENTER
+END
+
+IDD_ERROR_DLG DIALOG DISCARDABLE  0, 0, 348, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PlanDuplicator Error!"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,142,63,63,18
+    LTEXT           "",IDC_STATIC_ERROR,15,17,318,31,SS_CENTERIMAGE
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "PlanDuplicator MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "PlanDuplicator\0"
+            VALUE "LegalCopyright", "Copyright (C) 2010\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "PlanDuplicator.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "PlanDuplicator Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PLANDUPLICATOR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 491
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 448
+    END
+
+    IDD_ERROR_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 341
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP  DISCARDABLE     "res\\file_typ.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About PlanDuplicator..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\PlanDuplicator.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
