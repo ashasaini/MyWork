@@ -1,0 +1,15 @@
+body{
+height: 100%;
+width: 100%;
+margin-left:auto;
+margin-right:auto;
+background-repeat: no-repeat;
+}
+
+body.index{
+background-image:url("../images/index3.JPG");
+}
+
+li{
+list-style-type:none;
+}
